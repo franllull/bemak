@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Bemak - La Agencia</title>
+  <meta name="description" content="">
+  
+        <!-- Hammer reload -->
+          <script>
+            setInterval(function(){
+              try {
+                if(typeof ws != 'undefined' && ws.readyState == 1){return true;}
+                ws = new WebSocket('ws://'+(location.host || 'localhost').split(':')[0]+':35353')
+                ws.onopen = function(){ws.onclose = function(){document.location.reload()}}
+                ws.onmessage = function(){
+                  var links = document.getElementsByTagName('link'); 
+                    for (var i = 0; i < links.length;i++) { 
+                    var link = links[i]; 
+                    if (link.rel === 'stylesheet' && !link.href.match(/typekit/)) { 
+                      href = link.href.replace(/((&|\?)hammer=)[^&]+/,''); 
+                      link.href = href + (href.indexOf('?')>=0?'&':'?') + 'hammer='+(new Date().valueOf());
+                    }
+                  }
+                }
+              }catch(e){}
+            }, 1000)
+          </script>
+        <!-- /Hammer reload -->
+      
+  <link rel='stylesheet' href='assets/css/normalize.css'>
+<link rel='stylesheet' href='bemak/assets/css/normalize.css'>
+<link rel='stylesheet' href='bemak/Build/assets/css/normalize.css'>
+<link rel='stylesheet' href='assets/css/style.css'>
+<link rel='stylesheet' href='bemak/assets/css/style.css'>
+<link rel='stylesheet' href='bemak/Build/assets/css/style.css'>
+<link rel='stylesheet' href='assets/css/bootstrap.min.css'>
+<link rel='stylesheet' href='assets/css/bootstrap-responsive.min.css'>
+  <script src='assets/js/jquery-1.8.3.min.js'></script>
+<script src='bemak/assets/js/jquery-1.8.3.min.js'></script>
+<script src='bemak/Build/assets/js/jquery-1.8.3.min.js'></script>
+<script src='assets/js/bootstrap.min.js'></script>
+<script src='assets/js/app.js'></script>
+<script src='bemak/assets/js/app.js'></script>
+<script src='bemak/Build/assets/js/app.js'></script>
+  <link href="assets/favicon.ico" rel="shortcut icon">
+  <link href="assets/apple-touch-icon.png" rel="apple-touch-icon">
+  <link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700,400italic' rel='stylesheet' type='text/css'>
+</head>
+
+<body class="Bemak">
+<div class="g-sidebarra visible-desktop"></div>
+
+  <header>
+    <nav class="container">
+	<div class="onnavbar">
+		<h1><a class="logo" href="index.html"><span class="hidden">BeMAK</span></a></h1>
+		<a class="arrow" href="#" data-toggle="collapse" data-target="#navcontent"></a>
+		
+		<ul id="navcontent" class="navcontent unstyled collapse"> 
+			<li><a href="agencia.html">La Agencia</a></li>
+			<li><a href="#">Servicios</a></li>
+			<li><a href="#">Noticias</a></li>
+			<li><a href="#">Contacto</a></li>
+		</ul>
+	
+	</div>
+
+	<div class="socialnets pull-right white">
+		<a class="tw" target="_blank" href="http://twitter.com/bemak_on"><span class="tw"><i class="hidden">twitter</i></span></a><a class="fb" target="_blank" href="http://www.facebook.com/bemak_on"><span class="fb"><i class="hidden">facebook</i></span></a><a class="ln" target="_blank" href="http://www.linkedin.com"><span class="ln"><i class="hidden">linkedin</i></span></a><a class="gp" target="_blank" href="http://plus.google.com"><span class="gp"><i class="hidden">google plus</i></span></a><a class="ma" target="_blank" href="mailto:contacto@bemak.es"><span class="ma"><i class="hidden">email</i></span></a><a class="ph" target="_blank" href="tel:2125551212"><span class="ph"><i class="hidden">telephone</i></span></a>
+	</div>
+</nav>
+    
+  </header>
+
+
+
+
+<section class="container nosotros topair">
+<div class="row-fluid agenciatop">
+  <div class="span4"><h1>La Agencia</h1></div>
+  <div class="span8 agencianav">
+    <ul>
+      <li><a class="nos" href="nosotros.html"><i class="nos"></i>Sobre Nosotros</a></li>
+      <li><a class="cli" href="clientes.html"><i class="cli"></i>Clientes</a></li>
+      <li><a class="pri" href="principios.html"><i class="pri"></i>Principios</a></li>
+      <li class='current'><a class="current faq" href="faq.html"><i class="faq"></i>F.A.Q</a></li>
+    </ul>
+  </div>
+</div>
+
+<div class="faq topair">
+  <div class="question-wrapper">
+  <h3><a class="faq-quest" data-toggle="collapse" data-target="#queessm" >¿Qué quiere decir o qué es ‘Social Media Marketing’?</a></h3>
+  <p class="faq-answ collapse in" id="queessm">Traduciríamos el término como ‘medios sociales’ o ‘medios de comunicación social’ y hace referencia a toda acción de marketing que se realice en los medios de comunicación basados en la llamada Web 2.0, donde los usuarios de Internet pueden conversar, manifestar sus opiniones y participar. <br />Los clientes hoy en día están online y demandan ser escuchados por las marcas. Es una oportunidad fantástica para atraer, fidelizar, y mantener una comunicación diaria con los clientes.</p>
+  </div>
+
+  <div class="question-wrapper">
+  <h3><a class="faq-quest" data-toggle="collapse" data-target="#porquedentro" >¿Por qué me puede interesar estar dentro de las redes sociales?</a></h3>
+  <p class="faq-answ collapse in" id="porquedentro">Sencillamente es la forma más fácil y rápida para llegar a tener contacto y acceso a toda una serie de personas interesadas en ti o tu negocio. <br />Utilizar las herramientas de Social Media Marketing significa hablar de tú a tú, ya no existe una diferenciación, una frialdad entre la marca y el cliente, ellos demandan ser escuchados y nosotros lo hacemos. Eso es lo que más valoran los clientes, sintiéndose más involucrados con la marca los esfuerzos de marketing se vuelven mucho más personales. <br /> Además, el no mostrar miedo de tener una conversación o recibir opiniones de los clientes significa que la marca no tiene nada que ocultar, es algo positivo y que se traduce en mayor confianza y ventas. <br /> ¿Recuerdas cuando para saber la opinión de tus clientes necesitabas hacer exhaustivos análisis o encuestas que tardaban meses en ser analizadas? En redes sociales tenemos gran acceso a una muestra fiable de clientes donde podemos realizar preguntas que podrán ser respondidas al instante. Rapidez y fiabilidadd en el feedback de los clientes. <br /> 
+  Llegar a un gran público no es complicado si el trabajo es realizado por auténticos profesionales. El marketing viral es una consecuencia natural de la misma. Si nuestros clientes consideran el contenido de interés lo compartirán, realizando así una onda expansiva que cada vez dará más y más publicidad gratuita a la marca.  <br /> Los beneficios de tener una campaña online pueden ser diversos dependiendo de cada empresa pero por lo general podemos hablar de cercanía, visibilidad, ventas y fidelización.
+
+
+</p>
+  </div>
+
+</div>
+  
+</button>
+
+  </section>
+
+
+</body>
+
+</html>

@@ -1,0 +1,341 @@
+//icons
+@mixin icon($iwi, $ihe) {display:inline-block; width: $iwi; height: $ihe;}
+
+//buttons
+@mixin button($colorbutt) {
+	display: inline-block; padding: 15px; background-color: $colorbutt; color: white; font-weight: bold; text-decoration: none; font-size: 20px; @include transition (all 0.2s ease);
+	&:hover {background-color: darken($colorbutt, 8%); }
+}
+
+@mixin filter($filter-type,$filter-amount) { 
+  -webkit-filter: $filter-type+unquote('(#{$filter-amount})');
+  -moz-filter: $filter-type+unquote('(#{$filter-amount})');
+  -ms-filter: $filter-type+unquote('(#{$filter-amount})');
+  -o-filter: $filter-type+unquote('(#{$filter-amount})');
+  filter: $filter-type+unquote('(#{$filter-amount})');
+}
+
+
+//measure
+.mt {margin-top: 20px;}
+.pt {padding-top: 20px;}
+
+//type
+* {font-family: 'Source Sans Pro', sans-serif;}
+h1 {font-size: 50px; line-height: 50px; font-weight: 100;}
+h2 {font-size: 30px; line-height: 30px;}
+h3 {font-size: 23px; line-height: 23px; font-weight: normal; font-weight: bold;}
+h4 {font-size: 18px; line-height: 18px; font-weight: normal;}
+h5 {font-size: 18px; font-weight: 400; text-transform: uppercase; color: #888;}
+
+//colors 
+$bl: #222; 
+$dbl: lighten($bl, 4%); 
+$gr: #666; 
+$wh: #fff; 
+$dwh: darken($wh, 20%); 
+$blue: #7697AE; 
+$yell: #F4DF79;
+$red :#CB6F76;
+.white {color: #fff;}
+
+.border {border-bottom: 1px solid #ccc;}
+.astyles {text-decoration: none; color: $bl;}
+.img-circle {border-radius: 100%;}
+
+
+//buttons
+.b-blue {@include button(darken($blue,15%));}
+
+//paddings
+$pxxl: 30px; $pxl: 20px; $pl: 15px; $p: 10px; $ps: 5px;
+
+
+
+body {background-image: url(back.png); -webkit-font-smoothing: antialiased; color: lighten($bl,10%);}
+body.home {background: {color:$blue; image: none;}}
+
+.b-sidebarra {height: 100%; width: 20px; position: fixed; top: 0px; left: 0px; background:darken($blue,15%); z-index: -1;}
+.y-sidebarra {@extend .b-sidebarra; background:lighten($yell,10%); }
+.r-sidebarra {@extend .b-sidebarra; background:lighten($red,10%); }
+.g-sidebarra {@extend .b-sidebarra; background:lighten($gr,10%); }
+
+.topair {margin-top: 60px;}
+
+
+//==================== navbar =========================
+header {	
+	background:$bl;
+	height: 70px;
+	z-index: 30;
+	nav {
+		.onnavbar {
+			position:absolute;
+			background:$bl;
+			min-height: 70px;
+			width: 310px;
+			z-index: 1;
+			border: {right: 1px solid darken($gr, 20%); left: 1px solid darken($gr, 20%);}
+
+			h1 {
+				height: 70px;
+
+				.logo {
+					@include icon (100px, 38px);
+					background-image: url(logo.png);
+					background-repeat: no-repeat;
+					background-position: center center;
+					padding: 16px $pxxl;
+				}
+			}
+
+			.arrow {
+				@include icon (37px, 20px);
+				background-image: url(list.png);
+				background-repeat: no-repeat;
+				background-position: center center;
+				position: absolute; 
+				top: 25px; 
+				right: 20px;
+			}
+			.navcontent {padding: 0px!important; margin: 0!important;}
+			.navcontent li {
+				height: 50px;
+				@include transition (all 0.2s ease);
+				&:nth-child(odd) {background-color: $dbl;}
+				&:nth-child(even) {background-color: $bl;}
+				&:hover {background-color: lighten($bl, 10%);}
+				a {
+					@include icon(100%, 50px);
+					@include box-sizing(border-box);
+					@extend .astyles;
+					color: $dwh;
+					padding: $pl $pxxl;
+				}
+			}
+		}
+	}
+
+	.socialnets {
+		border: {left: 1px solid darken($gr, 20%);right: 1px solid #000;}
+		height: 70px;
+		a {
+			height: 70px; 
+			@include icon(45px, 70px);
+			border: {
+				left: 1px solid #000;
+				right: 1px solid darken($gr, 20%);
+			}
+			margin: 0px; padding: 0px;
+			text-align: center;
+			@include transition (all 0.2s ease);
+			@include box-sizing(border-box);
+
+			span {
+				background-image: url(socialsprite.png); 
+				@include icon(30px, 30px);
+				margin: 20px auto;
+				i {display: none; color: #fff; padding-left: 40px;}
+			}
+			span.fb {background-position: -30px 0;}
+			span.ln {background-position: -60px 0;}
+			span.gp {background-position: -90px 0;}
+			span.ma {background-position: -120px 0;}
+			span.ph {background-position: -150px 0;}
+		}
+		a.tw {border-bottom:10px solid darken(#32CCFE, 7%);}
+		a.fb {border-bottom:10px solid darken(#3B5998, 7%);}
+		a.ln {border-bottom:10px solid darken(#50A1CB, 7%);}
+		a.gp {border-bottom:10px solid darken(#C43B2C, 7%);}
+		a.ma {border-bottom:10px solid darken(#333, 0%);}
+		a.ph {border-bottom:10px solid darken(#333, 0%);}
+	}
+}
+
+span.tw:hover, span.fb:hover, span.ln:hover, span.gp:hover, span.ma:hover, span.ph:hover {
+	@include animation-name(shake);
+	@include animation-duration(0.3s);
+	@include animation-timing-function(cubic-bezier(.54,0,0,.99));
+	@include animation-iteration-count(once);
+
+}
+
+@include keyframes(shake) {
+  0% {background-position: 0 -200px;}
+  100% {background-position: 0 -2200px;}
+}
+
+@-webkit-keyframes shake {
+	25%,50%,75%,100% {@include transform-origin (top top);}
+    25% {@include transform(rotate(10deg));}
+    50% {@include transform(rotate(-6deg));}
+    75% {@include transform(rotate(2deg));}
+    100% {@include transform(rotate(0deg));}
+}
+
+
+
+
+//==================== home =========================
+$colors-h: 600px;
+.homecolors {
+	position: relative;
+	z-index: -1;
+	@include animation-name(welcome);
+	@include animation-duration(3.5s);
+	@include animation-timing-function(cubic-bezier(.54,0,0,.99));
+	@include animation-iteration-count(once);
+	height: $colors-h;
+	background: {
+		image: url(welcome.png);
+		repeat: repeat-y;
+		position: 0 -2200px;
+	}
+	.lowgrad {
+		height: $colors-h;
+		@include background(linear-gradient(to bottom, rgba(255,255,255,0) 0%,rgba(126,157,179,0) 92%,rgba(119,152,175,1) 99%,rgba(118,151,174,1) 100%));
+	}
+}
+@include keyframes(welcome) {
+  0% {background-position: 0 -200px;}
+  100% {background-position: 0 -2200px;}
+}
+
+.calltoaction {padding-top: 100px;}
+
+
+
+
+//==================== agencia =========================
+.agencia {
+	h1 {
+		@extend .border;
+		padding-bottom: $p;
+	}
+
+	.row-fluid {
+		.cube {
+			@include icon(250px, 250px);
+			@include transition (all 0.1s ease);
+			&:hover {background: {color:$bl; image:none;}}
+			&:hover span {color: darken($wh, 30%); }
+			span {display: block; color: transparent; font-size: 40px; font-weight: bold; line-height: 38px; text-transform: uppercase; padding: 15px;}
+			vertical-align: top;
+		}
+		.nosotros {background: {color: $yell;image: url(agenciasprite.png);position: 0px 0px;}}
+		.clientes {background: {color: $blue;image: url(agenciasprite.png);position: -250px 0px;}}
+		.principios {background: {color: $red;image: url(agenciasprite.png);position: -500px 0px;}}
+		.faq {background: {color: $gr;image: url(agenciasprite.png);position: -750px 0px;}}
+	}
+}
+
+//======= sobrenosotros =========
+.nosotros {
+	.agenciatop {
+		border-bottom: 1px solid #ccc;
+		.agencianav {
+			text-align: right;
+			ul {
+				list-style: none;
+				margin: 17px 0 0 0;
+				li {
+					display: inline-block;
+					margin-right: $pl;
+					a {
+						&:hover {opacity: .7;}
+						@extend .astyles;
+						@include transition (all 0.4s ease);
+						font-size: 20px;
+						i {@include icon(30px, 30px); background-image: url(miniagenciasprite.png); vertical-align: bottom;}
+						i.nos {background-position: 0 0;}
+						i.cli {background-position: -30px 0;}
+						i.pri {background-position: -60px 0;}
+						i.faq {background-position: -90px 0;}
+					}
+				}
+				.current a.nos {border-bottom: 3px solid $yell;}
+				.current a.cli {border-bottom: 3px solid $blue;}
+				.current a.pri {border-bottom: 3px solid $red;}
+				.current a.faq {border-bottom: 3px solid #ccc;}
+			}
+		}
+	}
+}
+
+.team-info {
+	margin-top: 40px;
+	h4 {margin: 5px 0;}
+	p {margin: 10px 0;}
+	.team-nets {
+		border: {
+			top: 1px solid #ccc;
+			bottom: 1px solid #ccc;
+		}
+		a, i {@include icon(30px, 30px);}
+		a {	
+			@include transition (all 0.4s ease);
+			&:hover {opacity: .6;}
+		}
+		i {background-image: url(blacksocialsprite.png);}
+		i.ln {background-position: -60px 0px;}
+		i.tw {background-position: 0px 0px;}
+		i.gp {background-position: -90px 0px;}
+	}
+}
+
+//======= clientes =========
+.clientrow {
+	img {
+		@include filter (grayscale, 100%); 
+		@include transition (all 0.4s ease);
+		&:hover {opacity: 0.8;}
+	}
+	h4 {
+		margin-top: $p;
+		border-top: 1px solid #ccc;
+	}
+}
+
+//======= principios =========
+.principios {
+	max-width: 700px;
+	ol li {
+		span {
+			font-weight: 400;
+			display: block;
+			font-size: 22px;
+			text-transform: uppercase;
+			line-height: 26px;
+		}
+		border: {left: 4px solid #ccc;}
+		padding: {left: $pxl;}
+		margin: {bottom: 30px;}
+		font-size: 30px;
+		font-weight: bold;
+		p {font-size: 16px; font-weight: normal;}
+	}
+}
+//======= faq =========
+.faq {
+	max-width: 700px;
+	.faq-quest {
+		font-weight: bold;
+		&:hover {cursor: pointer;}
+	}
+}
+
+
+@media (max-width: 768px) {
+	header {margin-left: -20px!important; margin-right: -20px!important; padding-right: 20px!important; padding-left: 20px!important;}
+}
+
+
+@media only screen and (-webkit-min-device-pixel-ratio: 1.5) {
+
+  /* Don't forget your Retina CSS! */
+  
+  body {
+    background-size: 72px 72px;
+  }
+
+}
