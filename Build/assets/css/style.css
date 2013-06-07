@@ -36,7 +36,7 @@ h5 {
 .white {
   color: #fff; }
 
-.border, .agencia h1 {
+.border, .agencia h1, .faq .question-wrapper a {
   border-bottom: 1px solid #ccc; }
 
 .astyles, header nav .onnavbar .navcontent li a, .nosotros .agenciatop .agencianav ul li a {
@@ -474,6 +474,14 @@ span.tw:hover, span.fb:hover, span.ln:hover, span.gp:hover, span.ma:hover, span.
 
 .faq {
   max-width: 700px; }
+  .faq .question-wrapper a {
+    background-image: url(../arrow.png);
+    background-position: center right;
+    background-repeat: no-repeat;
+    padding-right: 30px;
+    padding-bottom: 5px; }
+  .faq .question-wrapper a.collapsed {
+    background-image: url(arrowdown.png); }
   .faq .faq-quest {
     font-weight: bold; }
     .faq .faq-quest:hover {

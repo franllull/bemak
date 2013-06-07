@@ -317,6 +317,26 @@ $colors-h: 600px;
 }
 //======= faq =========
 .faq {
+	.question-wrapper {
+		a {
+			background: {
+				image: url(arrow.png);
+				position: center right;
+				repeat: no-repeat;
+			};
+			padding: {
+				right: $pxxl;
+				bottom: $ps;
+			};
+			@extend .border;
+		}
+
+		a.collapsed {
+			background: {
+				image: url(arrowdown.png);
+			};
+		}
+	}
 	max-width: 700px;
 	.faq-quest {
 		font-weight: bold;
