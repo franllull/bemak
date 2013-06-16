@@ -48,6 +48,8 @@ h5 {
 
 .b-blue {
   display: inline-block;
+  text-align: center;
+  border: none;
   padding: 15px;
   background-color: #507187;
   color: white;
@@ -58,7 +60,14 @@ h5 {
   -moz-transition: all 0.2s ease;
   transition: all 0.2s ease; }
   .b-blue:hover {
-    background-color: #415b6e; }
+    background-color: #415b6e;
+    color: white; }
+
+.full-button {
+  width: 100%;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box; }
 
 body {
   background-image: url(../back.png);
@@ -68,6 +77,18 @@ body {
 body.home {
   background-color: #7697ae;
   background-image: none; }
+
+.topair {
+  margin-top: 60px; }
+
+a {
+  color: #476377;
+  -webkit-transition: all 0.2s ease;
+  -moz-transition: all 0.2s ease;
+  transition: all 0.2s ease;
+  text-decoration: none; }
+  a:hover {
+    color: #5a7e97; }
 
 .b-sidebarra, .y-sidebarra, .r-sidebarra, .g-sidebarra {
   height: 100%;
@@ -87,13 +108,11 @@ body.home {
 .g-sidebarra {
   background: gray; }
 
-.topair {
-  margin-top: 60px; }
-
 header {
   background: #222222;
   height: 70px;
-  z-index: 30; }
+  z-index: 30;
+  box-shadow: 0px 1px 10px #000; }
   header nav .onnavbar {
     position: absolute;
     background: #222222;
@@ -294,7 +313,8 @@ span.tw:hover, span.fb:hover, span.ln:hover, span.gp:hover, span.ma:hover, span.
   height: 600px;
   background-image: url(../welcome.png);
   background-repeat: repeat-y;
-  background-position: 0 -2200px; }
+  background-position: 0 -2200px;
+  background-size: 100%; }
   .homecolors .lowgrad {
     height: 600px;
     background: -webkit-linear-gradient(top, rgba(255, 255, 255, 0) 0%, rgba(126, 157, 179, 0) 92%, #7798af 99%, #7697ae 100%);
@@ -366,7 +386,7 @@ span.tw:hover, span.fb:hover, span.ln:hover, span.gp:hover, span.ma:hover, span.
   background-color: #cb6f76;
   background-image: url(../agenciasprite.png);
   background-position: -500px 0px; }
-.agencia .row-fluid .faq {
+.agencia .row-fluid .frequent {
   background-color: #666666;
   background-image: url(../agenciasprite.png);
   background-position: -750px 0px; }
@@ -400,7 +420,7 @@ span.tw:hover, span.fb:hover, span.ln:hover, span.gp:hover, span.ma:hover, span.
             background-position: -30px 0; }
           .nosotros .agenciatop .agencianav ul li a i.pri {
             background-position: -60px 0; }
-          .nosotros .agenciatop .agencianav ul li a i.faq {
+          .nosotros .agenciatop .agencianav ul li a i.frequent {
             background-position: -90px 0; }
       .nosotros .agenciatop .agencianav ul .current a.nos {
         border-bottom: 3px solid #f4df79; }
@@ -408,36 +428,35 @@ span.tw:hover, span.fb:hover, span.ln:hover, span.gp:hover, span.ma:hover, span.
         border-bottom: 3px solid #7697ae; }
       .nosotros .agenciatop .agencianav ul .current a.pri {
         border-bottom: 3px solid #cb6f76; }
-      .nosotros .agenciatop .agencianav ul .current a.faq {
+      .nosotros .agenciatop .agencianav ul .current a.frequent {
         border-bottom: 3px solid #ccc; }
 
-.team-info {
-  margin-top: 40px; }
-  .team-info h4 {
-    margin: 5px 0; }
-  .team-info p {
-    margin: 10px 0; }
-  .team-info .team-nets {
-    border-top: 1px solid #ccc;
-    border-bottom: 1px solid #ccc; }
-    .team-info .team-nets a, .team-info .team-nets i {
-      display: inline-block;
-      width: 30px;
-      height: 30px; }
-    .team-info .team-nets a {
-      -webkit-transition: all 0.4s ease;
-      -moz-transition: all 0.4s ease;
-      transition: all 0.4s ease; }
-      .team-info .team-nets a:hover {
-        opacity: .6; }
-    .team-info .team-nets i {
-      background-image: url(../blacksocialsprite.png); }
-    .team-info .team-nets i.ln {
-      background-position: -60px 0px; }
-    .team-info .team-nets i.tw {
-      background-position: 0px 0px; }
-    .team-info .team-nets i.gp {
-      background-position: -90px 0px; }
+.team-info h2 {
+  margin: 5px 0;
+  font-weight: 400; }
+.team-info p {
+  margin: 10px 0; }
+.team-info .team-nets {
+  border-top: 1px solid #ccc;
+  border-bottom: 1px solid #ccc; }
+  .team-info .team-nets a, .team-info .team-nets i {
+    display: inline-block;
+    width: 30px;
+    height: 30px; }
+  .team-info .team-nets a {
+    -webkit-transition: all 0.4s ease;
+    -moz-transition: all 0.4s ease;
+    transition: all 0.4s ease; }
+    .team-info .team-nets a:hover {
+      opacity: .6; }
+  .team-info .team-nets i {
+    background-image: url(../blacksocialsprite.png); }
+  .team-info .team-nets i.ln {
+    background-position: -60px 0px; }
+  .team-info .team-nets i.tw {
+    background-position: 0px 0px; }
+  .team-info .team-nets i.gp {
+    background-position: -90px 0px; }
 
 .clientrow img {
   -webkit-filter: grayscale(100%);
@@ -473,26 +492,61 @@ span.tw:hover, span.fb:hover, span.ln:hover, span.gp:hover, span.ma:hover, span.
       font-weight: normal; }
 
 .faq {
-  max-width: 700px; }
+  max-width: 700px;
+  padding: 20px;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box; }
   .faq .question-wrapper a {
-    background-image: url(../arrow.png);
+    background-image: url(../arrowdown.png);
     background-position: center right;
     background-repeat: no-repeat;
     padding-right: 30px;
-    padding-bottom: 5px; }
+    padding-bottom: 5px;
+    line-height: 39px; }
   .faq .question-wrapper a.collapsed {
-    background-image: url(arrowdown.png); }
+    background-image: url(../arrow.png); }
   .faq .faq-quest {
-    font-weight: bold; }
+    font-weight: 400; }
     .faq .faq-quest:hover {
       cursor: pointer; }
+  .faq .faq-answ {
+    margin-bottom: 30px; }
+
+.contacto .supermap {
+  height: 300px; }
+.contacto h2 {
+  font-weight: 300;
+  text-align: center;
+  margin-top: 20px;
+  line-height: 33px; }
+.contacto .contactform h3 {
+  padding-bottom: 5px;
+  margin-bottom: 10px; }
+.contacto .contactform .cfield {
+  border: 1px solid #b6c8d4; }
+.contacto .contactinfo h3 {
+  padding-bottom: 5px;
+  margin-bottom: 10px; }
 
 @media (max-width: 768px) {
   header {
-    margin-left: -20px !important;
-    margin-right: -20px !important;
     padding-right: 20px !important;
-    padding-left: 20px !important; } }
+    padding-left: 20px !important;
+    margin-left: -20px;
+    margin-right: -20px; }
+
+  .topair {
+    margin-top: 30px; }
+
+  .calltoaction {
+    position: absolute;
+    left: 0px;
+    top: 70px;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    padding: 25px;
+    height: 100%; } }
 @media only screen and (-webkit-min-device-pixel-ratio: 1.5) {
   /* Don't forget your Retina CSS! */
   body {
