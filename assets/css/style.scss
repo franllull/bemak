@@ -36,6 +36,7 @@ $dwh: darken($wh, 20%);
 $blue: #7697AE; 
 $yell: #F4DF79;
 $red :#CB6F76;
+$green: #86C084;
 .white {color: #fff;}
 
 .border {border-bottom: 1px solid #ccc;}
@@ -52,9 +53,10 @@ $pxxl: 30px; $pxl: 20px; $pl: 15px; $p: 10px; $ps: 5px;
 
 
 //basic stuff
-body {background-image: url(back.png); -webkit-font-smoothing: antialiased; color: lighten($bl,10%);}
+body {background-image: url(back.png); -webkit-font-smoothing: antialiased; color: $bl;}
 body.home {background: {color:$blue; image: none;}} 
 .topair {margin-top: 60px;}
+.sectiontitle {padding-bottom:$p; @extend .border; }
 a {
 	color: darken($blue, 20%);
 	@include transition (all 0.2s ease);
@@ -64,11 +66,14 @@ a {
 	}
 }
 
+/* @todo correct a styles for faq */
+
 //sidebarra
 .b-sidebarra {height: 100%; width: 20px; position: fixed; top: 0px; left: 0px; background:darken($blue,15%); z-index: -1;}
 .y-sidebarra {@extend .b-sidebarra; background:lighten($yell,10%); }
 .r-sidebarra {@extend .b-sidebarra; background:lighten($red,10%); }
 .g-sidebarra {@extend .b-sidebarra; background:lighten($gr,10%); }
+.bl-sidebarra {@extend .b-sidebarra; background:$bl; }
 
 
 //==================== navbar =========================
@@ -127,30 +132,36 @@ header {
 
 	.socialnets {
 		border: {left: 1px solid darken($gr, 20%);right: 1px solid #000;}
+		background: $bl;
 		height: 70px;
-		a {
-			height: 70px; 
-			@include icon(45px, 70px);
+		margin: 0; padding: 0;
+		li {
+			display: inline-block; 
 			border: {
 				left: 1px solid #000;
 				right: 1px solid darken($gr, 20%);
 			}
-			margin: 0px; padding: 0px;
-			text-align: center;
-			@include transition (all 0.2s ease);
-			@include box-sizing(border-box);
+			height: 70px;
+			a {
+				height: 70px; 
+				@include icon(45px, 70px);
+				margin: 0px; padding: 0px;
+				text-align: center;
+				@include transition (all 0.2s ease);
+				@include box-sizing(border-box);
 
-			span {
-				background-image: url(socialsprite.png); 
-				@include icon(30px, 30px);
-				margin: 20px auto;
-				i {display: none; color: #fff; padding-left: 40px;}
+				span {
+					background-image: url(socialsprite.png); 
+					@include icon(30px, 30px);
+					margin: 20px auto;
+					i {display: none; color: #fff; padding-left: 40px;}
+				}
+				span.fb {background-position: -30px 0;}
+				span.ln {background-position: -60px 0;}
+				span.gp {background-position: -90px 0;}
+				span.ma {background-position: -120px 0;}
+				span.ph {background-position: -150px 0;}
 			}
-			span.fb {background-position: -30px 0;}
-			span.ln {background-position: -60px 0;}
-			span.gp {background-position: -90px 0;}
-			span.ma {background-position: -120px 0;}
-			span.ph {background-position: -150px 0;}
 		}
 		a.tw {border-bottom:10px solid darken(#32CCFE, 7%);}
 		a.fb {border-bottom:10px solid darken(#3B5998, 7%);}
@@ -274,6 +285,7 @@ $colors-h: 600px;
 
 .team-info {
 	h2 {margin: 5px 0; font-weight: 400;}
+	h5 {color: #C2AB3D;}
 	p {margin: 10px 0;}
 	.team-nets {
 		border: {
@@ -294,6 +306,7 @@ $colors-h: 600px;
 
 //======= clientes =========
 .clientrow {
+	div {margin-bottom: 25px;}
 	img {
 		@include filter (grayscale, 100%); 
 		@include transition (all 0.4s ease);
@@ -316,7 +329,7 @@ $colors-h: 600px;
 			text-transform: uppercase;
 			line-height: 26px;
 		}
-		border: {left: 4px solid #ccc;}
+		border: {left: 4px solid lighten($red, 10%);}
 		padding: {left: $pxl;}
 		margin: {bottom: 30px;}
 		font-size: 30px;
@@ -342,6 +355,7 @@ $colors-h: 600px;
 				right: $pxxl;
 				bottom: $ps;
 			};
+			opacity: 0.8;
 			@extend .border;
 			line-height: 39px;
 		}
@@ -350,16 +364,54 @@ $colors-h: 600px;
 			background: {
 				image: url(arrow.png);
 			};
+			opacity: 1;
+			&:hover{ opacity: 0.8;}
 		}
 	}
 
 	.faq-quest {
 		font-weight: 400;
+		color: $bl;
 		&:hover {cursor: pointer;}
 	}
 	.faq-answ {
 		margin-bottom: $pxxl;
 	}
+}
+
+//==================== servicios =========================
+
+blockquote {
+	font-style: italic; font-weight: 500; font-size: 20px; border-left: 4px solid lighten($bl, 10%); padding: $p $pxl; margin-left: 0; opacity: 0.6;
+	span {font-size: 40px; font-weight: bold;}
+}
+
+.servicios {
+	.serviciosblock {
+		padding: $pxxl;
+		@include box-sizing(border-box);
+		h1 {font-weight: bold; text-transform: uppercase; text-align: center;}
+		.serviciosicon {
+			margin: {left: auto; right: auto;}
+			width: 100%;
+			max-width: 300px;
+			height: 200px;
+			background: {
+				image: url(serviciossprite.png);
+				repeat: no-repeat;
+			}
+		}
+	}
+
+	.serviciosblock.socialmedia {background-color: lighten($green, 3%);}
+	.serviciosicon.socialmedia {background-position: 0 0;}
+
+	.serviciosblock.formacion {background-color: lighten($yell, 3%);}
+	.serviciosicon.formacion {background-position: -300px 0;}
+
+	.serviciosblock.disenyo {background-color: lighten($red, 3%);}
+	.serviciosicon.disenyo {background-position: -600px 0;}
+
 }
 
 //==================== contact =========================
@@ -370,13 +422,20 @@ $colors-h: 600px;
 	h2 {font-weight: 300; text-align: center; margin-top: 20px; line-height: 33px;}
 	.contactform {
 		h3 {padding-bottom: 5px; margin-bottom: 10px; }
-		.cfield {border: 1px solid lighten($blue,20%);}
+		.cfield {border: 1px solid #ccc; font-size: 18px; min-height: 34px;}
 	}
 	.contactinfo {
 		h3 {padding-bottom: 5px; margin-bottom: 10px;}
 	}
 }
 
+//==================== footer =========================
+
+footer {
+	margin: 100px 0 40px 0; opacity: 0.5; text-align: center; color: $bl; border-top: 1px solid #ccc; padding-top: $pl;
+	a {text-decoration: underline;}
+
+}
 
 @media (max-width: 768px) {
 	
@@ -387,6 +446,11 @@ $colors-h: 600px;
 		margin-right: -20px;
 	}
 
+	.nosotros .agenciatop .agencianav ul {margin: 0; padding: 0;}
+	.nosotros .agenciatop .agencianav ul li {display: block;margin: 15px 15px 15px 0;text-align: left;}
+
+	.teambox {margin-bottom: 60px;}
+	.img-circle {border-radius: 0;}
 	.topair {margin-top: 30px;}
 
 	.calltoaction {

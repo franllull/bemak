@@ -4,7 +4,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Bemak - La Agencia</title>
+  <title>Bemak - Contacto</title>
   <meta name="description" content="">
   
         <!-- Hammer reload -->
@@ -52,16 +52,18 @@
 		
 		<ul id="navcontent" class="navcontent unstyled collapse"> 
 			<li><a href="agencia.html">La Agencia</a></li>
-			<li><a href="#">Servicios</a></li>
+			<li><a href="servicios.html">Servicios</a></li>
 			<li><a href="http://www.bemak.es/blog">Noticias</a></li>
 			<li class='current'><a class='current' href="contacto.html">Contacto</a></li>
 		</ul>
 	
 	</div>
 
-	<div class="socialnets pull-right white">
-		<a class="tw" target="_blank" href="http://www.twitter.com/bemak_on"><span class="tw"><i class="hidden">twitter</i></span></a><a class="fb" target="_blank" href="http://www.facebook.com/BEMAK.on"><span class="fb"><i class="hidden">facebook</i></span></a><a class="ln" target="_blank" href="http://www.linkedin.com/company/2587165?trk=tyah"><span class="ln"><i class="hidden">linkedin</i></span></a><a class="gp" target="_blank" href="http://plus.google.com/u/1/b/114199293112228025958/114199293112228025958/posts"><span class="gp"><i class="hidden">google plus</i></span></a><a class="ma" target="_blank" href="mailto:contacto@bemak.es"><span class="ma"><i class="hidden">email</i></span></a><a class="ph" target="_blank" href="tel:+34-634-549-105"><span class="ph"><i class="hidden">telephone</i></span></a>
-	</div>
+	<ul class="socialnets pull-right white">
+		
+		<li><a class="tw" target="_blank" href="http://www.twitter.com/bemak_on"><span class="tw"><i class="hidden">twitter</i></span></a></li><li><a class="fb" target="_blank" href="http://www.facebook.com/BEMAK.on"><span class="fb"><i class="hidden">facebook</i></span></a></li><li><a class="ln" target="_blank" href="http://www.linkedin.com/company/2587165?trk=tyah"><span class="ln"><i class="hidden">linkedin</i></span></a></li><li><a class="gp" target="_blank" href="http://plus.google.com/u/1/b/114199293112228025958/114199293112228025958/posts"><span class="gp"><i class="hidden">google plus</i></span></a></li><li><a class="ma" target="_blank" href="mailto:contacto@bemak.es"><span class="ma"><i class="hidden">email</i></span></a></li><li><a class="ph" href="tel:+34-634-549-105"><span class="ph"><i class="hidden">telephone</i></span></a></li>
+	</ul>
+	<!-- @todo fix responsive networks! -->
 </nav>
     
   </header>
@@ -75,8 +77,8 @@
 <div class="container contacto">
 	
 	<div id="map-canvas" class="supermap topair"></div>
-	<a class="b-blue full-button visible-phone" href="https://maps.google.com/?daddr=parc+bit-1,25">Cómo Llegar</a>
-	<h2 class="hidden-phone">Hablar sobre nuevos proyectos y posibilidades es una de las mejores partes de nuestro día. <br /> No seas tímido: llama, mándanos un email o pásate a vernos. Trae a tus amigos o a tu compañero de mesa (pero llama primero para que preparemos el café).</h2>
+	<a class="b-blue full-button visible-phone" target="_blank" href="https://maps.google.com/?daddr=parc+bit-1,25">Cómo Llegar</a>
+	<h2 class="hidden-phone">Hablar sobre nuevos proyectos y posibilidades es una de las mejores partes de nuestro día. <br /> No seas tímido: llama, mándanos un email o pásate a vernos (pero llama primero para que preparemos el café).</h2>
 
 	<div class="topair row">
 
@@ -110,12 +112,37 @@
 			  </div>
 			</form>
 		</div>
+
+
+
+<form class="email" action="mailer.php" method="post">
+<p>Name:</p>
+<input type="text" name="name" />
+<p>E-mail:</p>
+<input type="text" name="email" />
+<p>Subject:</p>
+<input type="text" name="subject" />
+<p>Message:</p>
+<textarea name="message"></textarea></p>
+<input class="send" type="submit" value="Send">
+</form>
+
+
+
 	
 	</div>
-		
-
-
-
- 
 
 </div>
+
+
+<footer class="container">
+	<h4>
+		Bemak Online Networks 2013 | <a class='current' href="contacto.html">Contacto</a>
+
+
+	</h4>
+</footer>
+
+</body>
+
+</html>

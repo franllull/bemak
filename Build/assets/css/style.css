@@ -36,7 +36,7 @@ h5 {
 .white {
   color: #fff; }
 
-.border, .agencia h1, .faq .question-wrapper a {
+.border, .sectiontitle, .agencia h1, .faq .question-wrapper a {
   border-bottom: 1px solid #ccc; }
 
 .astyles, header nav .onnavbar .navcontent li a, .nosotros .agenciatop .agencianav ul li a {
@@ -72,7 +72,7 @@ h5 {
 body {
   background-image: url(../back.png);
   -webkit-font-smoothing: antialiased;
-  color: #3c3c3c; }
+  color: #222222; }
 
 body.home {
   background-color: #7697ae;
@@ -80,6 +80,9 @@ body.home {
 
 .topair {
   margin-top: 60px; }
+
+.sectiontitle {
+  padding-bottom: 10px; }
 
 a {
   color: #476377;
@@ -90,7 +93,8 @@ a {
   a:hover {
     color: #5a7e97; }
 
-.b-sidebarra, .y-sidebarra, .r-sidebarra, .g-sidebarra {
+/* @todo correct a styles for faq */
+.b-sidebarra, .y-sidebarra, .r-sidebarra, .g-sidebarra, .bl-sidebarra {
   height: 100%;
   width: 20px;
   position: fixed;
@@ -107,6 +111,9 @@ a {
 
 .g-sidebarra {
   background: gray; }
+
+.bl-sidebarra {
+  background: #222222; }
 
 header {
   background: #222222;
@@ -167,43 +174,49 @@ header {
   header .socialnets {
     border-left: 1px solid #333333;
     border-right: 1px solid #000;
-    height: 70px; }
-    header .socialnets a {
-      height: 70px;
+    background: #222222;
+    height: 70px;
+    margin: 0;
+    padding: 0; }
+    header .socialnets li {
       display: inline-block;
-      width: 45px;
-      height: 70px;
       border-left: 1px solid #000;
       border-right: 1px solid #333333;
-      margin: 0px;
-      padding: 0px;
-      text-align: center;
-      -webkit-transition: all 0.2s ease;
-      -moz-transition: all 0.2s ease;
-      transition: all 0.2s ease;
-      -webkit-box-sizing: border-box;
-      -moz-box-sizing: border-box;
-      box-sizing: border-box; }
-      header .socialnets a span {
-        background-image: url(../socialsprite.png);
+      height: 70px; }
+      header .socialnets li a {
+        height: 70px;
         display: inline-block;
-        width: 30px;
-        height: 30px;
-        margin: 20px auto; }
-        header .socialnets a span i {
-          display: none;
-          color: #fff;
-          padding-left: 40px; }
-      header .socialnets a span.fb {
-        background-position: -30px 0; }
-      header .socialnets a span.ln {
-        background-position: -60px 0; }
-      header .socialnets a span.gp {
-        background-position: -90px 0; }
-      header .socialnets a span.ma {
-        background-position: -120px 0; }
-      header .socialnets a span.ph {
-        background-position: -150px 0; }
+        width: 45px;
+        height: 70px;
+        margin: 0px;
+        padding: 0px;
+        text-align: center;
+        -webkit-transition: all 0.2s ease;
+        -moz-transition: all 0.2s ease;
+        transition: all 0.2s ease;
+        -webkit-box-sizing: border-box;
+        -moz-box-sizing: border-box;
+        box-sizing: border-box; }
+        header .socialnets li a span {
+          background-image: url(../socialsprite.png);
+          display: inline-block;
+          width: 30px;
+          height: 30px;
+          margin: 20px auto; }
+          header .socialnets li a span i {
+            display: none;
+            color: #fff;
+            padding-left: 40px; }
+        header .socialnets li a span.fb {
+          background-position: -30px 0; }
+        header .socialnets li a span.ln {
+          background-position: -60px 0; }
+        header .socialnets li a span.gp {
+          background-position: -90px 0; }
+        header .socialnets li a span.ma {
+          background-position: -120px 0; }
+        header .socialnets li a span.ph {
+          background-position: -150px 0; }
     header .socialnets a.tw {
       border-bottom: 10px solid #0ec3fe; }
     header .socialnets a.fb {
@@ -434,6 +447,8 @@ span.tw:hover, span.fb:hover, span.ln:hover, span.gp:hover, span.ma:hover, span.
 .team-info h2 {
   margin: 5px 0;
   font-weight: 400; }
+.team-info h5 {
+  color: #C2AB3D; }
 .team-info p {
   margin: 10px 0; }
 .team-info .team-nets {
@@ -458,6 +473,8 @@ span.tw:hover, span.fb:hover, span.ln:hover, span.gp:hover, span.ma:hover, span.
   .team-info .team-nets i.gp {
     background-position: -90px 0px; }
 
+.clientrow div {
+  margin-bottom: 25px; }
 .clientrow img {
   -webkit-filter: grayscale(100%);
   -moz-filter: grayscale(100%);
@@ -476,7 +493,7 @@ span.tw:hover, span.fb:hover, span.ln:hover, span.gp:hover, span.ma:hover, span.
 .principios {
   max-width: 700px; }
   .principios ol li {
-    border-left: 4px solid #ccc;
+    border-left: 4px solid #d9949a;
     padding-left: 20px;
     margin-bottom: 30px;
     font-size: 30px;
@@ -503,15 +520,62 @@ span.tw:hover, span.fb:hover, span.ln:hover, span.gp:hover, span.ma:hover, span.
     background-repeat: no-repeat;
     padding-right: 30px;
     padding-bottom: 5px;
+    opacity: 0.8;
     line-height: 39px; }
   .faq .question-wrapper a.collapsed {
-    background-image: url(../arrow.png); }
+    background-image: url(../arrow.png);
+    opacity: 1; }
+    .faq .question-wrapper a.collapsed:hover {
+      opacity: 0.8; }
   .faq .faq-quest {
-    font-weight: 400; }
+    font-weight: 400;
+    color: #222222; }
     .faq .faq-quest:hover {
       cursor: pointer; }
   .faq .faq-answ {
     margin-bottom: 30px; }
+
+blockquote {
+  font-style: italic;
+  font-weight: 500;
+  font-size: 20px;
+  border-left: 4px solid #3c3c3c;
+  padding: 10px 20px;
+  margin-left: 0;
+  opacity: 0.6; }
+  blockquote span {
+    font-size: 40px;
+    font-weight: bold; }
+
+.servicios .serviciosblock {
+  padding: 30px;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box; }
+  .servicios .serviciosblock h1 {
+    font-weight: bold;
+    text-transform: uppercase;
+    text-align: center; }
+  .servicios .serviciosblock .serviciosicon {
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%;
+    max-width: 300px;
+    height: 200px;
+    background-image: url(../serviciossprite.png);
+    background-repeat: no-repeat; }
+.servicios .serviciosblock.socialmedia {
+  background-color: #90c58e; }
+.servicios .serviciosicon.socialmedia {
+  background-position: 0 0; }
+.servicios .serviciosblock.formacion {
+  background-color: #f5e287; }
+.servicios .serviciosicon.formacion {
+  background-position: -300px 0; }
+.servicios .serviciosblock.disenyo {
+  background-color: #cf7a81; }
+.servicios .serviciosicon.disenyo {
+  background-position: -600px 0; }
 
 .contacto .supermap {
   height: 300px; }
@@ -524,10 +588,22 @@ span.tw:hover, span.fb:hover, span.ln:hover, span.gp:hover, span.ma:hover, span.
   padding-bottom: 5px;
   margin-bottom: 10px; }
 .contacto .contactform .cfield {
-  border: 1px solid #b6c8d4; }
+  border: 1px solid #ccc;
+  font-size: 18px;
+  min-height: 34px; }
 .contacto .contactinfo h3 {
   padding-bottom: 5px;
   margin-bottom: 10px; }
+
+footer {
+  margin: 100px 0 40px 0;
+  opacity: 0.5;
+  text-align: center;
+  color: #222222;
+  border-top: 1px solid #ccc;
+  padding-top: 15px; }
+  footer a {
+    text-decoration: underline; }
 
 @media (max-width: 768px) {
   header {
@@ -535,6 +611,21 @@ span.tw:hover, span.fb:hover, span.ln:hover, span.gp:hover, span.ma:hover, span.
     padding-left: 20px !important;
     margin-left: -20px;
     margin-right: -20px; }
+
+  .nosotros .agenciatop .agencianav ul {
+    margin: 0;
+    padding: 0; }
+
+  .nosotros .agenciatop .agencianav ul li {
+    display: block;
+    margin: 15px 15px 15px 0;
+    text-align: left; }
+
+  .teambox {
+    margin-bottom: 60px; }
+
+  .img-circle {
+    border-radius: 0; }
 
   .topair {
     margin-top: 30px; }
