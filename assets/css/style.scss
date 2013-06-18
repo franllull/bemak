@@ -225,15 +225,9 @@ $colors-h: 600px;
 .calltoaction {padding-top: 100px;}
 
 
-
-
 //==================== agencia =========================
 .agencia {
-	h1 {
-		@extend .border;
-		padding-bottom: $p;
-	}
-
+	
 	.row-fluid {
 		.cube {
 			@include icon(250px, 250px);
@@ -243,16 +237,17 @@ $colors-h: 600px;
 			span {display: block; color: transparent; font-size: 40px; font-weight: bold; line-height: 38px; text-transform: uppercase; padding: 15px;}
 			vertical-align: top;
 		}
-		.nosotros {background: {color: $yell;image: url(agenciasprite.png);position: 0px 0px;}}
-		.clientes {background: {color: $blue;image: url(agenciasprite.png);position: -250px 0px;}}
-		.principios {background: {color: $red;image: url(agenciasprite.png);position: -500px 0px;}}
-		.frequent {background: {color: $gr;image: url(agenciasprite.png);position: -750px 0px;}}
+		.cubenosotros {background: {color: $yell;image: url(agenciasprite.png);position: 0px 0px;}}
+		.cubeclientes {background: {color: $blue;image: url(agenciasprite.png);position: -250px 0px;}}
+		.cubeprincipios {background: {color: $red;image: url(agenciasprite.png);position: -500px 0px;}}
+		.cubefrequent {background: {color: $gr;image: url(agenciasprite.png);position: -750px 0px;}}
 	}
 }
 
 //======= sobrenosotros =========
 .nosotros {
 	.agenciatop {
+		a {color: $bl;}
 		border-bottom: 1px solid #ccc;
 		.agencianav {
 			text-align: right;
@@ -341,7 +336,6 @@ $colors-h: 600px;
 .faq {
 
 	max-width: 700px;
-	padding: $pxl;
 	@include box-sizing(border-box);
 
 	.question-wrapper {
@@ -406,6 +400,9 @@ blockquote {
 	.serviciosblock.socialmedia {background-color: lighten($green, 3%);}
 	.serviciosicon.socialmedia {background-position: 0 0;}
 
+	.serviciosblock.publicrelations {background-color: lighten($blue, 3%);}
+	.serviciosicon.publicrelations {background-position: -900px 0;}
+
 	.serviciosblock.formacion {background-color: lighten($yell, 3%);}
 	.serviciosicon.formacion {background-position: -300px 0;}
 
@@ -416,7 +413,7 @@ blockquote {
 
 //==================== contact =========================
 
-
+#perfecto {background: $yell; padding: $pxl; }
 .contacto {
 	.supermap {height: 300px;}
 	h2 {font-weight: 300; text-align: center; margin-top: 20px; line-height: 33px;}
@@ -438,12 +435,29 @@ footer {
 }
 
 @media (max-width: 768px) {
-	
+
+
+	.homecolors {
+		height: 400px;
+		.lowgrad {
+			height: 400px;
+		}
+	}
+
 	header {
 		padding-right: 20px!important; 
 		padding-left: 20px!important;
 		margin-left: -20px;
 		margin-right: -20px;
+
+		.onnavbar {
+			position: relative;
+		}
+		.socialnets {
+			margin-top: 70px;
+			width: auto;
+			text-align: center;
+		}
 	}
 
 	.nosotros .agenciatop .agencianav ul {margin: 0; padding: 0;}
@@ -463,6 +477,7 @@ footer {
 		height: 100%;
 	}
 }
+
 
 
 @media only screen and (-webkit-min-device-pixel-ratio: 1.5) {

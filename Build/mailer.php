@@ -1,11 +1,12 @@
 <?php
 /* Set e-mail recipient */
-$myemail = "franllull@gmail.com";
+$myemail = "contacto@bemak.es";
 
 /* Check all form inputs using check_input function */
-$name = check_input($_POST['name'], "Enter your name");
-$subject = check_input($_POST['subject'], "Enter a subject");
+$name = check_input($_POST['name'], "Escribe tu nombre");
+$empresa = check_input($_POST['empresa'], "Escribe tu empresa");
 $email = check_input($_POST['email']);
+$phone = check_input($_POST['phone'], "Escribe tu telefono");
 $message = check_input($_POST['message'], "Write your message");
 
 /* If e-mail is not valid show error message */
@@ -16,9 +17,10 @@ show_error("E-mail address not valid");
 /* Let's prepare the message for the e-mail */
 $message = "
 
-Name: $name
-E-mail: $email
-Subject: $subject
+Nombre: $name
+Empresa: $empresa
+Email: $email
+Telefono: $phone
 
 Message:
 $message
@@ -26,10 +28,10 @@ $message
 ";
 
 /* Send the message using mail() function */
-mail($myemail, $subject, $message);
+mail($myemail, $empresa, $message);
 
 /* Redirect visitor to the thank you page */
-header('Location: contacto-gracias.html');
+header('Location: contacto-tnx.html#perfecto');
 exit();
 
 /* Functions we used */

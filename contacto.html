@@ -1,14 +1,18 @@
 <!-- @include _header -->
-<!-- $title Bemak - Contacto -->
+<!-- $title BEMAK - Contacto -->
 <!-- $bclass Bemak -->
 <!-- $sidebarracolor b -->
 
 <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false"></script>
 <script type="text/javascript" src="<!-- @path maps.js -->"></script>
 
-<div class="container contacto">
+<div class="container contacto topair">
+
+	<div class="row-fluid">
+		<div class="span12 sectiontitle"><h1>Contacto</h1></div>
+	</div>
 	
-	<div id="map-canvas" class="supermap topair"></div>
+	<div id="map-canvas" class="supermap mt"></div>
 	<a class="b-blue full-button visible-phone" target="_blank" href="https://maps.google.com/?daddr=parc+bit-1,25">Cómo Llegar</a>
 	<h2 class="hidden-phone">Hablar sobre nuevos proyectos y posibilidades es una de las mejores partes de nuestro día. <br /> No seas tímido: llama, mándanos un email o pásate a vernos (pero llama primero para que preparemos el café).</h2>
 
@@ -25,18 +29,18 @@
 
 		<div class="contactform span6">
 			<h3 class="border">Escríbenos</h3>
-			<form>
+			<form class="email" action="mailer.php" method="post">
 			  <div class="controls controls-row">
-			      <input id="nombre" name="nombre" type="text" class="span3 cfield" placeholder="Nombre"> 
+			      <input id="nombre" name="name" type="text" class="span3 cfield" placeholder="Nombre"> 
 			      <input id="empresa" name="empresa" type="text" class="span3 cfield" placeholder="Empresa">
 			  </div>
 			  <div class="controls controls-row">
 			      <input id="email" name="email" type="email" class="span3 cfield" placeholder="tuemail@email.com"> 
-			      <input id="telefono" name="telefono" type="text" class="span3 cfield" placeholder="+34 689 984 345">
+			      <input id="telefono" name="phone" type="text" class="span3 cfield" placeholder="+34 689 984 345">
 			  </div>
 
 			  <div class="controls">
-			      <textarea id="mensaje" name="mensaje" class="span6 cfield" placeholder="Mensaje" rows="5"></textarea>
+			      <textarea id="mensaje" name="message" class="span6 cfield" placeholder="Mensaje" rows="5"></textarea>
 			  </div>
 			  
 			  <div class="controls">
@@ -44,23 +48,6 @@
 			  </div>
 			</form>
 		</div>
-
-
-
-<form class="email" action="mailer.php" method="post">
-<p>Name:</p>
-<input type="text" name="name" />
-<p>E-mail:</p>
-<input type="text" name="email" />
-<p>Subject:</p>
-<input type="text" name="subject" />
-<p>Message:</p>
-<textarea name="message"></textarea></p>
-<input class="send" type="submit" value="Send">
-</form>
-
-
-
 	
 	</div>
 

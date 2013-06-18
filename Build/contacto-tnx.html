@@ -4,8 +4,8 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Bemak - Contacto</title>
-  <meta name="description" content="">
+  <title>BEMAK - Contacto</title>
+  <meta name="description" content="Agencia de marketing online en Palma de Mallorca. Gestión de campañas de marketing online para empresas, posicionamiento en buscadores, relaciones públicas online, formación en marketing online y diseño y páginas web.">
   
         <!-- Hammer reload -->
           <script>
@@ -36,8 +36,10 @@
   <script src='assets/js/jquery-1.8.3.min.js'></script>
 <script src='assets/js/bootstrap.min.js'></script>
 <script src='assets/js/app.js'></script>
+  <link rel="logo" type="image/svg" href="assets/logo.svg"/>
   <link href="assets/favicon.ico" rel="shortcut icon">
   <link href="assets/apple-touch-icon.png" rel="apple-touch-icon">
+
   <link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700,400italic' rel='stylesheet' type='text/css'>
 </head>
 
@@ -59,7 +61,7 @@
 	
 	</div>
 
-	<ul class="socialnets pull-right white">
+	<ul class="socialnets pull-right white visible-desktop">
 		
 		<li><a class="tw" target="_blank" href="http://www.twitter.com/bemak_on"><span class="tw"><i class="hidden">twitter</i></span></a></li><li><a class="fb" target="_blank" href="http://www.facebook.com/BEMAK.on"><span class="fb"><i class="hidden">facebook</i></span></a></li><li><a class="ln" target="_blank" href="http://www.linkedin.com/company/2587165?trk=tyah"><span class="ln"><i class="hidden">linkedin</i></span></a></li><li><a class="gp" target="_blank" href="http://plus.google.com/u/1/b/114199293112228025958/114199293112228025958/posts"><span class="gp"><i class="hidden">google plus</i></span></a></li><li><a class="ma" target="_blank" href="mailto:contacto@bemak.es"><span class="ma"><i class="hidden">email</i></span></a></li><li><a class="ph" href="tel:+34-634-549-105"><span class="ph"><i class="hidden">telephone</i></span></a></li>
 	</ul>
@@ -74,9 +76,13 @@
 <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false"></script>
 <script type="text/javascript" src="assets/js/maps.js"></script>
 
-<div class="container contacto">
+<div class="container contacto topair">
+
+	<div class="row-fluid">
+		<div class="span12 sectiontitle"><h1>Contacto</h1></div>
+	</div>
 	
-	<div id="map-canvas" class="supermap topair"></div>
+	<div id="map-canvas" class="supermap mt"></div>
 	<a class="b-blue full-button visible-phone" target="_blank" href="https://maps.google.com/?daddr=parc+bit-1,25">Cómo Llegar</a>
 	<h2 class="hidden-phone">Hablar sobre nuevos proyectos y posibilidades es una de las mejores partes de nuestro día. <br /> No seas tímido: llama, mándanos un email o pásate a vernos (pero llama primero para que preparemos el café).</h2>
 
@@ -93,19 +99,19 @@
 
 		<div class="contactform span6">
 			<h3 class="border">Escríbenos</h3>
-			<h2>Gracias!!</h2>
-			<form>
+			<p id="perfecto">Perfecto, hemos recibido tu mensaje. Pronto contestaremos!</p>
+			<form class="email" action="mailer.php" method="post">
 			  <div class="controls controls-row">
-			      <input id="nombre" name="nombre" type="text" class="span3 cfield" placeholder="Nombre"> 
+			      <input id="nombre" name="name" type="text" class="span3 cfield" placeholder="Nombre"> 
 			      <input id="empresa" name="empresa" type="text" class="span3 cfield" placeholder="Empresa">
 			  </div>
 			  <div class="controls controls-row">
 			      <input id="email" name="email" type="email" class="span3 cfield" placeholder="tuemail@email.com"> 
-			      <input id="telefono" name="telefono" type="text" class="span3 cfield" placeholder="+34 689 984 345">
+			      <input id="telefono" name="phone" type="text" class="span3 cfield" placeholder="+34 689 984 345">
 			  </div>
 
 			  <div class="controls">
-			      <textarea id="mensaje" name="mensaje" class="span6 cfield" placeholder="Mensaje" rows="5"></textarea>
+			      <textarea id="mensaje" name="message" class="span6 cfield" placeholder="Mensaje" rows="5"></textarea>
 			  </div>
 			  
 			  <div class="controls">

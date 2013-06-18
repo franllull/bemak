@@ -36,7 +36,7 @@ h5 {
 .white {
   color: #fff; }
 
-.border, .sectiontitle, .agencia h1, .faq .question-wrapper a {
+.border, .sectiontitle, .faq .question-wrapper a {
   border-bottom: 1px solid #ccc; }
 
 .astyles, header nav .onnavbar .navcontent li a, .nosotros .agenciatop .agencianav ul li a {
@@ -364,8 +364,6 @@ span.tw:hover, span.fb:hover, span.ln:hover, span.gp:hover, span.ma:hover, span.
 .calltoaction {
   padding-top: 100px; }
 
-.agencia h1 {
-  padding-bottom: 10px; }
 .agencia .row-fluid .cube {
   display: inline-block;
   width: 250px;
@@ -387,25 +385,27 @@ span.tw:hover, span.fb:hover, span.ln:hover, span.gp:hover, span.ma:hover, span.
     line-height: 38px;
     text-transform: uppercase;
     padding: 15px; }
-.agencia .row-fluid .nosotros {
+.agencia .row-fluid .cubenosotros {
   background-color: #f4df79;
   background-image: url(../agenciasprite.png);
   background-position: 0px 0px; }
-.agencia .row-fluid .clientes {
+.agencia .row-fluid .cubeclientes {
   background-color: #7697ae;
   background-image: url(../agenciasprite.png);
   background-position: -250px 0px; }
-.agencia .row-fluid .principios {
+.agencia .row-fluid .cubeprincipios {
   background-color: #cb6f76;
   background-image: url(../agenciasprite.png);
   background-position: -500px 0px; }
-.agencia .row-fluid .frequent {
+.agencia .row-fluid .cubefrequent {
   background-color: #666666;
   background-image: url(../agenciasprite.png);
   background-position: -750px 0px; }
 
 .nosotros .agenciatop {
   border-bottom: 1px solid #ccc; }
+  .nosotros .agenciatop a {
+    color: #222222; }
   .nosotros .agenciatop .agencianav {
     text-align: right; }
     .nosotros .agenciatop .agencianav ul {
@@ -510,7 +510,6 @@ span.tw:hover, span.fb:hover, span.ln:hover, span.gp:hover, span.ma:hover, span.
 
 .faq {
   max-width: 700px;
-  padding: 20px;
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   box-sizing: border-box; }
@@ -568,6 +567,10 @@ blockquote {
   background-color: #90c58e; }
 .servicios .serviciosicon.socialmedia {
   background-position: 0 0; }
+.servicios .serviciosblock.publicrelations {
+  background-color: #809eb4; }
+.servicios .serviciosicon.publicrelations {
+  background-position: -900px 0; }
 .servicios .serviciosblock.formacion {
   background-color: #f5e287; }
 .servicios .serviciosicon.formacion {
@@ -576,6 +579,10 @@ blockquote {
   background-color: #cf7a81; }
 .servicios .serviciosicon.disenyo {
   background-position: -600px 0; }
+
+#perfecto {
+  background: #f4df79;
+  padding: 20px; }
 
 .contacto .supermap {
   height: 300px; }
@@ -606,11 +613,22 @@ footer {
     text-decoration: underline; }
 
 @media (max-width: 768px) {
+  .homecolors {
+    height: 400px; }
+    .homecolors .lowgrad {
+      height: 400px; }
+
   header {
     padding-right: 20px !important;
     padding-left: 20px !important;
     margin-left: -20px;
     margin-right: -20px; }
+    header .onnavbar {
+      position: relative; }
+    header .socialnets {
+      margin-top: 70px;
+      width: auto;
+      text-align: center; }
 
   .nosotros .agenciatop .agencianav ul {
     margin: 0;
