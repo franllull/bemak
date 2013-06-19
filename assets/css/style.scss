@@ -43,14 +43,12 @@ $green: #86C084;
 .astyles {text-decoration: none; color: $bl;}
 .img-circle {border-radius: 100%;}
 
-
 //buttons
 .b-blue {@include button(darken($blue,15%));}
 .full-button {width: 100%; @include box-sizing(border-box);}
 
 //paddings
 $pxxl: 30px; $pxl: 20px; $pl: 15px; $p: 10px; $ps: 5px;
-
 
 //basic stuff
 body {background-image: url(back.png); -webkit-font-smoothing: antialiased; color: $bl;}
@@ -65,8 +63,6 @@ a {
 		color: darken($blue, 10%);
 	}
 }
-
-/* @todo correct a styles for faq */
 
 //sidebarra
 .b-sidebarra {height: 100%; width: 20px; position: fixed; top: 0px; left: 0px; background:darken($blue,15%); z-index: -1;}
@@ -87,7 +83,8 @@ header {
 			position:absolute;
 			background:$bl;
 			min-height: 70px;
-			width: 310px;
+			max-width: 310px;
+			width: 100%;
 			z-index: 1;
 			border: {right: 1px solid darken($gr, 20%); left: 1px solid darken($gr, 20%);}
 
@@ -151,7 +148,7 @@ header {
 				@include box-sizing(border-box);
 
 				span {
-					background-image: url(socialsprite.png); 
+					background-image: url(whitesocialsprite.png); 
 					@include icon(30px, 30px);
 					margin: 20px auto;
 					i {display: none; color: #fff; padding-left: 40px;}
@@ -222,12 +219,18 @@ $colors-h: 600px;
   100% {background-position: 0 -2200px;}
 }
 
-.calltoaction {padding-top: 100px;}
+.calltoaction {
+	position: relative;
+	@include animation-name(comeout);
+	@include animation-duration(1s);
+	@include animation-iteration-count(once);
+	@include animation-timing-function(ease);
+	padding-top: 100px;
+}
 
 
 //==================== agencia =========================
 .agencia {
-	
 	.row-fluid {
 		.cube {
 			@include icon(250px, 250px);
@@ -236,12 +239,22 @@ $colors-h: 600px;
 			&:hover span {color: darken($wh, 30%); }
 			span {display: block; color: transparent; font-size: 40px; font-weight: bold; line-height: 38px; text-transform: uppercase; padding: 15px;}
 			vertical-align: top;
+			position: relative;
+			@include animation-name(comeout);
+			@include animation-duration(1s);
+			@include animation-iteration-count(once);
+			@include animation-timing-function(ease);
 		}
 		.cubenosotros {background: {color: $yell;image: url(agenciasprite.png);position: 0px 0px;}}
 		.cubeclientes {background: {color: $blue;image: url(agenciasprite.png);position: -250px 0px;}}
 		.cubeprincipios {background: {color: $red;image: url(agenciasprite.png);position: -500px 0px;}}
 		.cubefrequent {background: {color: $gr;image: url(agenciasprite.png);position: -750px 0px;}}
 	}
+}
+
+@include keyframes(comeout) {
+  0% {opacity: 0; bottom: 10px;}
+  100% {opacity: 1; bottom: 0px;}
 }
 
 //======= sobrenosotros =========
@@ -276,6 +289,14 @@ $colors-h: 600px;
 			}
 		}
 	}
+}
+
+.img-circle {
+	position: relative;
+	@include animation-name(comeout);
+	@include animation-duration(1s);
+	@include animation-iteration-count(once);
+	@include animation-timing-function(ease);
 }
 
 .team-info {
@@ -398,16 +419,16 @@ blockquote {
 	}
 
 	.serviciosblock.socialmedia {background-color: lighten($green, 3%);}
-	.serviciosicon.socialmedia {background-position: 0 0;}
+	.serviciosicon.socialmedia {background-position: center -60px;}
 
 	.serviciosblock.publicrelations {background-color: lighten($blue, 3%);}
-	.serviciosicon.publicrelations {background-position: -900px 0;}
+	.serviciosicon.publicrelations {background-position: center -950px;}
 
 	.serviciosblock.formacion {background-color: lighten($yell, 3%);}
-	.serviciosicon.formacion {background-position: -300px 0;}
+	.serviciosicon.formacion {background-position: center -350px;}
 
 	.serviciosblock.disenyo {background-color: lighten($red, 3%);}
-	.serviciosicon.disenyo {background-position: -600px 0;}
+	.serviciosicon.disenyo {background-position: center -665px;}
 
 }
 
@@ -451,7 +472,9 @@ footer {
 		margin-right: -20px;
 
 		.onnavbar {
-			position: relative;
+			position: relative!important;
+			max-width: 215px;
+
 		}
 		.socialnets {
 			margin-top: 70px;
@@ -475,6 +498,10 @@ footer {
 		background-color: rgba(0,0,0,0.8); 
 		padding: 25px; 
 		height: 100%;
+	}
+
+	.serviciosblock {
+		h1 {font-size: 35px; line-height: 33px;}
 	}
 }
 
