@@ -1,5 +1,9 @@
 //icons
-@mixin icon($iwi, $ihe) {display:inline-block; width: $iwi; height: $ihe;}
+@mixin icon($iwi, $ihe) {
+	display:inline-block;
+	width: $iwi; 
+	height: $ihe;
+}
 
 //buttons
 @mixin button($colorbutt) {
@@ -259,6 +263,7 @@ $colors-h: 600px;
 
 //======= sobrenosotros =========
 .nosotros {
+	h3 {font-weight: 500; text-align: center;}
 	.agenciatop {
 		a {color: $bl;}
 		border-bottom: 1px solid #ccc;
@@ -322,8 +327,11 @@ $colors-h: 600px;
 
 //======= clientes =========
 .clientrow {
+	.span4 {background:#fff; text-align: center; padding: 20px;}
 	div {margin-bottom: 25px;}
 	img {
+		text-align: center;
+		max-height: 210px;
 		@include filter (grayscale, 100%); 
 		@include transition (all 0.4s ease);
 		&:hover {opacity: 0.8;}
