@@ -5,34 +5,11 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
   <title>BEMAK - Servicios</title>
-  <meta name="description" content="Agencia de marketing online en Palma de Mallorca. Gestión de campañas de marketing online para empresas, posicionamiento en buscadores, relaciones públicas online, formación en marketing online y diseño y páginas web.">
-
   <meta property="og:title" content="BeMAK Online Networks" /> 
-  <meta property="og:description" content="Agencia de marketing online en Palma de Mallorca. Gestión de campañas de marketing online para empresas, posicionamiento en buscadores, relaciones públicas online, formación en marketing online y diseño y páginas web." /> 
   <meta property="og:image" content="http://www.bemak.es/assets/logo_share.png" /> 
-  
-        <!-- Hammer reload -->
-          <script>
-            setInterval(function(){
-              try {
-                if(typeof ws != 'undefined' && ws.readyState == 1){return true;}
-                ws = new WebSocket('ws://'+(location.host || 'localhost').split(':')[0]+':35353')
-                ws.onopen = function(){ws.onclose = function(){document.location.reload()}}
-                ws.onmessage = function(){
-                  var links = document.getElementsByTagName('link'); 
-                    for (var i = 0; i < links.length;i++) { 
-                    var link = links[i]; 
-                    if (link.rel === 'stylesheet' && !link.href.match(/typekit/)) { 
-                      href = link.href.replace(/((&|\?)hammer=)[^&]+/,''); 
-                      link.href = href + (href.indexOf('?')>=0?'&':'?') + 'hammer='+(new Date().valueOf());
-                    }
-                  }
-                }
-              }catch(e){}
-            }, 1000)
-          </script>
-        <!-- /Hammer reload -->
-      
+  <meta property="og:description" content="Agencia de marketing online en Palma de Mallorca. Gestión de campañas de marketing online para empresas, posicionamiento en buscadores, relaciones públicas online, formación en marketing online y diseño y páginas web." /> 
+  <meta property="og:url" content="http://www.bemak.es" />
+  <meta name="description" content="Agencia de marketing online en Palma de Mallorca. Gestión de campañas de marketing online para empresas, posicionamiento en buscadores, relaciones públicas online, formación en marketing online y diseño y páginas web.">
   <link rel='stylesheet' href='assets/css/normalize.css'>
 <link rel='stylesheet' href='assets/css/style.css'>
 <link rel='stylesheet' href='assets/css/bootstrap.min.css'>

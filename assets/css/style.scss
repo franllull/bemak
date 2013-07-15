@@ -232,6 +232,21 @@ $colors-h: 600px;
 	padding-top: 100px;
 }
 
+.languages {
+	font-size: 20px;
+	padding: 30px;
+	text-align: right;
+	.lang-selected {
+		font-weight: bold;
+	}
+	a {
+		color: $wh;
+		@include transition (all 0.3s ease);
+		&:hover {
+			bottom: 4px;
+		}
+	}
+}
 
 //==================== agencia =========================
 .agencia {
@@ -327,7 +342,7 @@ $colors-h: 600px;
 
 //======= clientes =========
 .clientrow {
-	.span4 {background:#fff; text-align: center; padding: 20px;}
+	.span4, .span8 {background:#fff; text-align: center; padding: 20px;}
 	div {margin-bottom: 25px;}
 	img {
 		text-align: center;
@@ -364,6 +379,7 @@ $colors-h: 600px;
 //======= faq =========
 .faq {
 
+	h3 {text-align: left;}
 	max-width: 700px;
 	@include box-sizing(border-box);
 
