@@ -28,7 +28,7 @@
 h1 {font-size: 50px; line-height: 50px; font-weight: 100;}
 h2 {font-size: 30px; line-height: 30px;}
 h3 {font-size: 23px; line-height: 23px; font-weight: normal; font-weight: bold;}
-h4 {font-size: 18px; line-height: 18px; font-weight: normal;}
+h4 {font-size: 18px; line-height: 23px; font-weight: normal;}
 h5 {font-size: 18px; font-weight: 400; text-transform: uppercase; color: #888;}
 
 //colors 
@@ -182,19 +182,12 @@ span.tw:hover, span.fb:hover, span.ln:hover, span.gp:hover, span.ma:hover, span.
 }
 
 @include keyframes(shake) {
-  0% {background-position: 0 -200px;}
-  100% {background-position: 0 -2200px;}
-}
-
-@-webkit-keyframes shake {
 	25%,50%,75%,100% {@include transform-origin (top top);}
     25% {@include transform(rotate(10deg));}
     50% {@include transform(rotate(-6deg));}
     75% {@include transform(rotate(2deg));}
     100% {@include transform(rotate(0deg));}
 }
-
-
 
 
 //==================== home =========================
@@ -479,7 +472,7 @@ footer {
 
 }
 
-@media (max-width: 768px) {
+@media (max-width: 767px) {
 
 
 	.homecolors {

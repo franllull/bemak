@@ -24,7 +24,7 @@ h3 {
 
 h4 {
   font-size: 18px;
-  line-height: 18px;
+  line-height: 23px;
   font-weight: normal; }
 
 h5 {
@@ -245,67 +245,67 @@ span.tw:hover, span.fb:hover, span.ln:hover, span.gp:hover, span.ma:hover, span.
   animation-iteration-count: once; }
 
 @-webkit-keyframes shake {
-  0% {
-    background-position: 0 -200px; }
+  25%,50%,75%,100% {
+    -webkit-transform-origin: top top; }
+
+  25% {
+    -webkit-transform: rotate(10deg); }
+
+  50% {
+    -webkit-transform: rotate(-6deg); }
+
+  75% {
+    -webkit-transform: rotate(2deg); }
 
   100% {
-    background-position: 0 -2200px; } }
+    -webkit-transform: rotate(0deg); } }
 
 @-moz-keyframes shake {
-  0% {
-    background-position: 0 -200px; }
+  25%,50%,75%,100% {
+    -moz-transform-origin: top top; }
+
+  25% {
+    -moz-transform: rotate(10deg); }
+
+  50% {
+    -moz-transform: rotate(-6deg); }
+
+  75% {
+    -moz-transform: rotate(2deg); }
 
   100% {
-    background-position: 0 -2200px; } }
+    -moz-transform: rotate(0deg); } }
 
 @-o-keyframes shake {
-  0% {
-    background-position: 0 -200px; }
+  25%,50%,75%,100% {
+    -o-transform-origin: top top; }
+
+  25% {
+    -o-transform: rotate(10deg); }
+
+  50% {
+    -o-transform: rotate(-6deg); }
+
+  75% {
+    -o-transform: rotate(2deg); }
 
   100% {
-    background-position: 0 -2200px; } }
+    -o-transform: rotate(0deg); } }
 
 @keyframes shake {
-  0% {
-    background-position: 0 -200px; }
-
-  100% {
-    background-position: 0 -2200px; } }
-
-@-webkit-keyframes shake {
   25%,50%,75%,100% {
-    -webkit-transform-origin: top top;
-    -moz-transform-origin: top top;
-    -ms-transform-origin: top top;
-    -o-transform-origin: top top;
     transform-origin: top top; }
 
   25% {
-    -webkit-transform: rotate(10deg);
-    -moz-transform: rotate(10deg);
-    -ms-transform: rotate(10deg);
-    -o-transform: rotate(10deg);
     transform: rotate(10deg); }
 
   50% {
-    -webkit-transform: rotate(-6deg);
-    -moz-transform: rotate(-6deg);
-    -ms-transform: rotate(-6deg);
-    -o-transform: rotate(-6deg);
     transform: rotate(-6deg); }
 
   75% {
-    -webkit-transform: rotate(2deg);
-    -moz-transform: rotate(2deg);
-    -ms-transform: rotate(2deg);
-    -o-transform: rotate(2deg);
     transform: rotate(2deg); }
 
   100% {
-    -webkit-transform: rotate(0deg);
-    -moz-transform: rotate(0deg);
-    -ms-transform: rotate(0deg);
-    -o-transform: rotate(0deg);
     transform: rotate(0deg); } }
 
 .homecolors {
@@ -714,7 +714,7 @@ footer {
   footer a {
     text-decoration: underline; }
 
-@media (max-width: 768px) {
+@media (max-width: 767px) {
   .homecolors {
     height: 400px; }
     .homecolors .lowgrad {
