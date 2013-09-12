@@ -11,16 +11,8 @@
 	&:hover {background-color: darken($colorbutt, 8%); color: white;}
 }
 
-@mixin filter($filter-type,$filter-amount) { 
-  -webkit-filter: $filter-type+unquote('(#{$filter-amount})');
-  -moz-filter: $filter-type+unquote('(#{$filter-amount})');
-  -ms-filter: $filter-type+unquote('(#{$filter-amount})');
-  -o-filter: $filter-type+unquote('(#{$filter-amount})');
-  filter: $filter-type+unquote('(#{$filter-amount})');
-}
-
 //measure
-.mt {margin-top: 20px;}
+.mt {margin-top: 20px;} .mb {margin-bottom: 20px;}
 .pt {padding-top: 20px;}
 
 //type
@@ -47,6 +39,7 @@ $green: #86C084;
 .astyles {text-decoration: none; color: $bl;}
 .img-circle {border-radius: 100%;}
 
+
 //buttons
 .b-blue {@include button(darken($blue,15%));}
 .full-button {width: 100%; @include box-sizing(border-box);}
@@ -55,7 +48,7 @@ $green: #86C084;
 $pxxl: 30px; $pxl: 20px; $pl: 15px; $p: 10px; $ps: 5px;
 
 //basic stuff
-body {background-image: url(back.png); -webkit-font-smoothing: antialiased; color: $bl;}
+body {background-image: url(back.png); -webkit-font-smoothing: antialiased; color: $bl; min-width: 305px;}
 body.home {background: {color:$blue; image: none;}} 
 .topair {margin-top: 60px;}
 .sectiontitle {padding-bottom:$p; @extend .border; }
@@ -87,7 +80,7 @@ header {
 			position:absolute;
 			background:$bl;
 			min-height: 70px;
-			max-width: 310px;
+			max-width: 278px;
 			width: 100%;
 			z-index: 1;
 			border: {right: 1px solid darken($gr, 20%); left: 1px solid darken($gr, 20%);}
@@ -129,6 +122,22 @@ header {
 				}
 			}
 		}
+	}
+
+	.socialarrow {
+		@include icon (37px, 20px);
+		background-image: url(more.png);
+		background-repeat: no-repeat;
+		background-position: center center;
+		position: absolute;
+		top: 25px; 
+		right: 30px;
+		visibility: hidden;
+		z-index: 2;
+	}
+
+	.socialarrow.xed {
+		@include transform(rotate(45deg));
 	}
 
 	.socialnets {
@@ -340,7 +349,6 @@ $colors-h: 600px;
 	img {
 		text-align: center;
 		max-height: 210px;
-		@include filter (grayscale, 100%); 
 		@include transition (all 0.4s ease);
 		&:hover {opacity: 0.8;}
 	}
@@ -377,22 +385,29 @@ $colors-h: 600px;
 	@include box-sizing(border-box);
 
 	.question-wrapper {
-		a {
+		button {
 			background: {
 				image: url(arrowdown.png);
 				position: center right;
 				repeat: no-repeat;
+				color: transparent;
 			};
 			padding: {
 				right: $pxxl;
 				bottom: $ps;
 			};
 			opacity: 0.8;
-			@extend .border;
+			border: none;
+			border: {
+				left: none;
+				top: none;
+				right: none;
+				bottom: 1px solid #ccc;
+			}
 			line-height: 39px;
 		}
 
-		a.collapsed {
+		button.collapsed {
 			background: {
 				image: url(arrow.png);
 			};
@@ -402,8 +417,10 @@ $colors-h: 600px;
 	}
 
 	.faq-quest {
+		@extend h3;
 		font-weight: 400;
 		color: $bl;
+		text-align: left!important;
 		&:hover {cursor: pointer;}
 	}
 	.faq-answ {
@@ -472,9 +489,13 @@ footer {
 
 }
 
+@media (max-width: 979px) { 
+	.nosotros .agenciatop .agencianav ul {margin: 0; padding: 0;}
+	.nosotros .agenciatop .agencianav ul li {display: block;margin: 15px 15px 15px 0;text-align: left;}
+}
+
+
 @media (max-width: 767px) {
-
-
 	.homecolors {
 		height: 400px;
 		.lowgrad {
@@ -489,19 +510,14 @@ footer {
 		margin-right: -20px;
 
 		.onnavbar {
-			position: relative!important;
 			max-width: 215px;
 
 		}
-		.socialnets {
-			margin-top: 70px;
-			width: auto;
-			text-align: center;
-		}
 	}
 
-	.nosotros .agenciatop .agencianav ul {margin: 0; padding: 0;}
-	.nosotros .agenciatop .agencianav ul li {display: block;margin: 15px 15px 15px 0;text-align: left;}
+	.socialnets {position: relative; right: 900px; z-index: 20; @include transition (all 0.2s ease-out);}
+	.socialnets.opened {display: block; right: 45px;}
+	.socialarrow {visibility: visible!important; right: 40px;}
 
 	.teambox {margin-bottom: 60px;}
 	.img-circle {border-radius: 0;}
@@ -514,7 +530,7 @@ footer {
 		width: 100%; 
 		background-color: rgba(0,0,0,0.8); 
 		padding: 25px; 
-		height: 100%;
+		min-height: 130%!important;
 	}
 
 	.serviciosblock {
@@ -522,7 +538,10 @@ footer {
 	}
 }
 
-
+@media (max-width: 480px) {
+	.arrow {right: 50px!important;}
+	header .socialnets li a {width:37px;}
+}
 
 @media only screen and (-webkit-min-device-pixel-ratio: 1.5) {
 

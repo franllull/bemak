@@ -1,5 +1,11 @@
 $(document).ready(function(){
   
-  // Write your Javascript!
+    $(".socialarrow").click(function () {
+	  	$('#socialcontent').toggleClass('opened');
+    });
+
+    $(".socialarrow").click(function () {
+	  	$('.socialarrow').toggleClass('xed');
+    });
 
 });

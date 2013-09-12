@@ -21,8 +21,16 @@
   <link rel="image_src" href="assets/logo_share.png"/>
   <link href="assets/favicon.ico" rel="shortcut icon">
   <link href="assets/apple-touch-icon.png" rel="apple-touch-icon">
-
   <link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700,400italic' rel='stylesheet' type='text/css'>
+  <script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+    ga('create', 'UA-42803570-1', 'bemak.es');
+    ga('send', 'pageview');
+  </script>
+
 </head>
 
 <body class="home">
@@ -43,22 +51,23 @@
 	
 	</div>
 
-	<ul class="socialnets pull-right white visible-desktop">
+		<a class="socialarrow pull-right" href="#"></a>
 		
-		<li><a class="tw" target="_blank" href="http://www.twitter.com/bemak_on"><span class="tw"><i class="hidden">twitter</i></span></a></li><li><a class="fb" target="_blank" href="http://www.facebook.com/BEMAK.on"><span class="fb"><i class="hidden">facebook</i></span></a></li><li><a class="ln" target="_blank" href="http://www.linkedin.com/company/2587165?trk=tyah"><span class="ln"><i class="hidden">linkedin</i></span></a></li><li><a class="gp" target="_blank" href="http://plus.google.com/u/1/b/114199293112228025958/114199293112228025958/posts"><span class="gp"><i class="hidden">google plus</i></span></a></li><li><a class="ma" target="_blank" href="mailto:contacto@bemak.es"><span class="ma"><i class="hidden">email</i></span></a></li><li><a class="ph" href="http://www.bemak.es/contacto.html/#llamar"><span class="ph"><i class="hidden">telephone</i></span></a></li>
-	</ul>
+		<ul id="socialcontent" class="socialnets pull-right white">
+			<li><a class="tw" target="_blank" href="http://www.twitter.com/bemak_on"><span class="tw"><i class="hidden">twitter</i></span></a></li><li><a class="fb" target="_blank" href="http://www.facebook.com/BEMAK.on"><span class="fb"><i class="hidden">facebook</i></span></a></li><li><a class="ln" target="_blank" href="http://www.linkedin.com/company/2587165?trk=tyah"><span class="ln"><i class="hidden">linkedin</i></span></a></li><li><a class="gp" target="_blank" href="http://plus.google.com/u/1/b/114199293112228025958/114199293112228025958/posts"><span class="gp"><i class="hidden">google plus</i></span></a></li><li><a class="ma" target="_blank" href="mailto:contacto@bemak.es"><span class="ma"><i class="hidden">email</i></span></a></li><li><a class="ph" href="http://bemak.es/contacto.html#llamar"><span class="ph"><i class="hidden">telephone</i></span></a></li>
+		</ul>
 </nav>
     
   </header>
-
 <script type="text/javascript">
-	$(document).ready(function() {
-	setTimeout(function(){
-	  $(".arrow").click();
-	}, 3700);
-	});
+$(document).ready(function() {
+	if ($(window).width() > 768) {
+	   setTimeout(function(){
+		  $(".arrow").click();
+		}, 3700);
+	}
+});
 </script>
-
   <section class="container home">
   	<div class="row-fluid">
 	    <div class="span7 homecolors">
@@ -67,7 +76,7 @@
 	    <div class="span5 white calltoaction">
 	    	<h1>Grandes proyectos y mejores ideas.</h1>
 	    	<h4 class="mt">Te damos la bienvenida a un lugar repleto de ideas. Somos BEMAK, una pequeña agencia de amantes del marketing, creativos, pensadores, y locos por internet; En definitiva, una pequeña agencia de grandes proyectos y mejores ideas.</h4>
-	    	<a class="b-blue mt" href="agencia.html">Conócenos</a>
+	    	<a class="b-blue mt mb" href="agencia.html">Conócenos</a>
 			<div class="languages white">
 	    		<a class="lang-selected" href="#">ES</a> | <a href="en/enindex.html">EN</a>
 	    	</div>   	

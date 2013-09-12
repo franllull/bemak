@@ -1,6 +1,9 @@
 .mt {
   margin-top: 20px; }
 
+.mb {
+  margin-bottom: 20px; }
+
 .pt {
   padding-top: 20px; }
 
@@ -16,7 +19,7 @@ h2 {
   font-size: 30px;
   line-height: 30px; }
 
-h3 {
+h3, .faq .faq-quest {
   font-size: 23px;
   line-height: 23px;
   font-weight: normal;
@@ -36,7 +39,7 @@ h5 {
 .white {
   color: #fff; }
 
-.border, .sectiontitle, .faq .question-wrapper a {
+.border, .sectiontitle {
   border-bottom: 1px solid #ccc; }
 
 .astyles, header nav .onnavbar .navcontent li a, .nosotros .agenciatop .agencianav ul li a {
@@ -72,7 +75,8 @@ h5 {
 body {
   background-image: url(../back.png);
   -webkit-font-smoothing: antialiased;
-  color: #222222; }
+  color: #222222;
+  min-width: 305px; }
 
 body.home {
   background-color: #7697ae;
@@ -123,7 +127,7 @@ header {
     position: absolute;
     background: #222222;
     min-height: 70px;
-    max-width: 310px;
+    max-width: 278px;
     width: 100%;
     z-index: 1;
     border-right: 1px solid #333333;
@@ -171,6 +175,24 @@ header {
         box-sizing: border-box;
         color: #cccccc;
         padding: 15px 30px; }
+  header .socialarrow {
+    display: inline-block;
+    width: 37px;
+    height: 20px;
+    background-image: url(../more.png);
+    background-repeat: no-repeat;
+    background-position: center center;
+    position: absolute;
+    top: 25px;
+    right: 30px;
+    visibility: hidden;
+    z-index: 2; }
+  header .socialarrow.xed {
+    -webkit-transform: rotate(45deg);
+    -moz-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    -o-transform: rotate(45deg);
+    transform: rotate(45deg); }
   header .socialnets {
     border-left: 1px solid #333333;
     border-right: 1px solid #000;
@@ -478,7 +500,7 @@ span.tw:hover, span.fb:hover, span.ln:hover, span.gp:hover, span.ma:hover, span.
     opacity: 1;
     bottom: 0px; } }
 
-.nosotros h3 {
+.nosotros h3, .nosotros .faq .faq-quest, .faq .nosotros .faq-quest {
   font-weight: 500;
   text-align: center; }
 .nosotros .agenciatop {
@@ -576,11 +598,6 @@ span.tw:hover, span.fb:hover, span.ln:hover, span.gp:hover, span.ma:hover, span.
 .clientrow img {
   text-align: center;
   max-height: 210px;
-  -webkit-filter: grayscale(100%);
-  -moz-filter: grayscale(100%);
-  -ms-filter: grayscale(100%);
-  -o-filter: grayscale(100%);
-  filter: grayscale(100%);
   -webkit-transition: all 0.4s ease;
   -moz-transition: all 0.4s ease;
   transition: all 0.4s ease; }
@@ -613,24 +630,31 @@ span.tw:hover, span.fb:hover, span.ln:hover, span.gp:hover, span.ma:hover, span.
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   box-sizing: border-box; }
-  .faq h3 {
+  .faq h3, .faq .faq-quest {
     text-align: left; }
-  .faq .question-wrapper a {
+  .faq .question-wrapper button {
     background-image: url(../arrowdown.png);
     background-position: center right;
     background-repeat: no-repeat;
+    background-color: transparent;
     padding-right: 30px;
     padding-bottom: 5px;
     opacity: 0.8;
+    border: none;
+    border-left: none;
+    border-top: none;
+    border-right: none;
+    border-bottom: 1px solid #ccc;
     line-height: 39px; }
-  .faq .question-wrapper a.collapsed {
+  .faq .question-wrapper button.collapsed {
     background-image: url(../arrow.png);
     opacity: 1; }
-    .faq .question-wrapper a.collapsed:hover {
+    .faq .question-wrapper button.collapsed:hover {
       opacity: 0.8; }
   .faq .faq-quest {
     font-weight: 400;
-    color: #222222; }
+    color: #222222;
+    text-align: left !important; }
     .faq .faq-quest:hover {
       cursor: pointer; }
   .faq .faq-answ {
@@ -693,14 +717,14 @@ blockquote {
   text-align: center;
   margin-top: 20px;
   line-height: 33px; }
-.contacto .contactform h3 {
+.contacto .contactform h3, .contacto .contactform .faq .faq-quest, .faq .contacto .contactform .faq-quest {
   padding-bottom: 5px;
   margin-bottom: 10px; }
 .contacto .contactform .cfield {
   border: 1px solid #ccc;
   font-size: 18px;
   min-height: 34px; }
-.contacto .contactinfo h3 {
+.contacto .contactinfo h3, .contacto .contactinfo .faq .faq-quest, .faq .contacto .contactinfo .faq-quest {
   padding-bottom: 5px;
   margin-bottom: 10px; }
 
@@ -714,6 +738,15 @@ footer {
   footer a {
     text-decoration: underline; }
 
+@media (max-width: 979px) {
+  .nosotros .agenciatop .agencianav ul {
+    margin: 0;
+    padding: 0; }
+
+  .nosotros .agenciatop .agencianav ul li {
+    display: block;
+    margin: 15px 15px 15px 0;
+    text-align: left; } }
 @media (max-width: 767px) {
   .homecolors {
     height: 400px; }
@@ -726,21 +759,23 @@ footer {
     margin-left: -20px;
     margin-right: -20px; }
     header .onnavbar {
-      position: relative !important;
       max-width: 215px; }
-    header .socialnets {
-      margin-top: 70px;
-      width: auto;
-      text-align: center; }
 
-  .nosotros .agenciatop .agencianav ul {
-    margin: 0;
-    padding: 0; }
+  .socialnets {
+    position: relative;
+    right: 900px;
+    z-index: 20;
+    -webkit-transition: all 0.2s ease-out;
+    -moz-transition: all 0.2s ease-out;
+    transition: all 0.2s ease-out; }
 
-  .nosotros .agenciatop .agencianav ul li {
+  .socialnets.opened {
     display: block;
-    margin: 15px 15px 15px 0;
-    text-align: left; }
+    right: 45px; }
+
+  .socialarrow {
+    visibility: visible !important;
+    right: 40px; }
 
   .teambox {
     margin-bottom: 60px; }
@@ -758,11 +793,17 @@ footer {
     width: 100%;
     background-color: rgba(0, 0, 0, 0.8);
     padding: 25px;
-    height: 100%; }
+    min-height: 130% !important; }
 
   .serviciosblock h1 {
     font-size: 35px;
     line-height: 33px; } }
+@media (max-width: 480px) {
+  .arrow {
+    right: 50px !important; }
+
+  header .socialnets li a {
+    width: 37px; } }
 @media only screen and (-webkit-min-device-pixel-ratio: 1.5) {
   /* Don't forget your Retina CSS! */
   body {

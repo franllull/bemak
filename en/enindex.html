@@ -2,11 +2,13 @@
 <!-- @include _enheader -->
 
 <script type="text/javascript">
-	$(document).ready(function() {
-	setTimeout(function(){
-	  $(".arrow").click();
-	}, 3700);
-	});
+$(document).ready(function() {
+	if ($(window).width() > 768) {
+	   setTimeout(function(){
+		  $(".arrow").click();
+		}, 3700);
+	}
+});
 </script>
 
   <section class="container home">
