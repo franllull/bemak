@@ -1,7 +1,7 @@
 //icons
 @mixin icon($iwi, $ihe) {
 	display:inline-block;
-	width: $iwi; 
+	width: $iwi;
 	height: $ihe;
 }
 
@@ -23,13 +23,13 @@ h3 {font-size: 23px; line-height: 23px; font-weight: normal; font-weight: bold;}
 h4 {font-size: 18px; line-height: 23px; font-weight: normal;}
 h5 {font-size: 18px; font-weight: 400; text-transform: uppercase; color: #888;}
 
-//colors 
-$bl: #222; 
-$dbl: lighten($bl, 4%); 
-$gr: #666; 
-$wh: #fff; 
-$dwh: darken($wh, 20%); 
-$blue: #7697AE; 
+//colors
+$bl: #222;
+$dbl: lighten($bl, 4%);
+$gr: #666;
+$wh: #fff;
+$dwh: darken($wh, 20%);
+$blue: #7697AE;
 $yell: #F4DF79;
 $red :#CB6F76;
 $green: #86C084;
@@ -49,7 +49,7 @@ $pxxl: 30px; $pxl: 20px; $pl: 15px; $p: 10px; $ps: 5px;
 
 //basic stuff
 body {background-image: url(back.png); -webkit-font-smoothing: antialiased; color: $bl; min-width: 305px;}
-body.home {background: {color:$blue; image: none;}} 
+body.home {background: {color:$blue; image: none;}}
 .topair {margin-top: 60px;}
 .sectiontitle {padding-bottom:$p; @extend .border; }
 a {
@@ -70,7 +70,7 @@ a {
 
 
 //==================== navbar =========================
-header {	
+header {
 	background:$bl;
 	height: 70px;
 	z-index: 30;
@@ -102,8 +102,8 @@ header {
 				background-image: url(list.png);
 				background-repeat: no-repeat;
 				background-position: center center;
-				position: absolute; 
-				top: 25px; 
+				position: absolute;
+				top: 25px;
 				right: 20px;
 			}
 			.navcontent {padding: 0px!important; margin: 0!important;}
@@ -130,7 +130,7 @@ header {
 		background-repeat: no-repeat;
 		background-position: center center;
 		position: absolute;
-		top: 25px; 
+		top: 25px;
 		right: 30px;
 		visibility: hidden;
 		z-index: 2;
@@ -146,14 +146,14 @@ header {
 		height: 70px;
 		margin: 0; padding: 0;
 		li {
-			display: inline-block; 
+			display: inline-block;
 			border: {
 				left: 1px solid #000;
 				right: 1px solid darken($gr, 20%);
 			}
 			height: 70px;
 			a {
-				height: 70px; 
+				height: 70px;
 				@include icon(45px, 70px);
 				margin: 0px; padding: 0px;
 				text-align: center;
@@ -161,7 +161,7 @@ header {
 				@include box-sizing(border-box);
 
 				span {
-					background-image: url(whitesocialsprite.png); 
+					background-image: url(whitesocialsprite.png);
 					@include icon(30px, 30px);
 					margin: 20px auto;
 					i {display: none; color: #fff; padding-left: 40px;}
@@ -331,7 +331,7 @@ $colors-h: 600px;
 			bottom: 1px solid #ccc;
 		}
 		a, i {@include icon(30px, 30px);}
-		a {	
+		a {
 			@include transition (all 0.4s ease);
 			&:hover {opacity: .6;}
 		}
@@ -475,6 +475,9 @@ blockquote {
 	.contactform {
 		h3 {padding-bottom: 5px; margin-bottom: 10px; }
 		.cfield {border: 1px solid #ccc; font-size: 18px; min-height: 34px;}
+		.privacy {
+			input, label {display: inline-block; vertical-align: top; line-height: normal; }
+		}
 	}
 	.contactinfo {
 		h3 {padding-bottom: 5px; margin-bottom: 10px;}
@@ -489,7 +492,7 @@ footer {
 
 }
 
-@media (max-width: 979px) { 
+@media (max-width: 979px) {
 	.nosotros .agenciatop .agencianav ul {margin: 0; padding: 0;}
 	.nosotros .agenciatop .agencianav ul li {display: block;margin: 15px 15px 15px 0;text-align: left;}
 }
@@ -504,7 +507,7 @@ footer {
 	}
 
 	header {
-		padding-right: 20px!important; 
+		padding-right: 20px!important;
 		padding-left: 20px!important;
 		margin-left: -20px;
 		margin-right: -20px;
@@ -524,12 +527,12 @@ footer {
 	.topair {margin-top: 30px;}
 
 	.calltoaction {
-		position: absolute; 
+		position: absolute;
 		left: 0px;
-		top: 70px; 
-		width: 100%; 
-		background-color: rgba(0,0,0,0.8); 
-		padding: 25px; 
+		top: 70px;
+		width: 100%;
+		background-color: rgba(0,0,0,0.8);
+		padding: 25px;
 		min-height: 130%!important;
 	}
 
@@ -546,7 +549,7 @@ footer {
 @media only screen and (-webkit-min-device-pixel-ratio: 1.5) {
 
   /* Don't forget your Retina CSS! */
-  
+
   body {
     background-size: 72px 72px;
   }
