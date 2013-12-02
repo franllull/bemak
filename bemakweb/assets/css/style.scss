@@ -48,9 +48,17 @@ $green: #86C084;
 $pxxl: 30px; $pxl: 20px; $pl: 15px; $p: 10px; $ps: 5px;
 
 //basic stuff
-body {background-image: url(back.png); -webkit-font-smoothing: antialiased; color: $bl; min-width: 305px;}
+body {
+	background-image: url(back.png); 
+	-webkit-font-smoothing: antialiased; 
+	color: $bl; 
+	min-width: 305px;
+	@include box-sizing(border-box);
+}
+
 body.home {background: {color:$blue; image: none;}}
 .topair {margin-top: 60px;}
+.narrow {max-width: 650px;}
 .sectiontitle {padding-bottom:$p; @extend .border; }
 a {
 	color: darken($blue, 20%);
@@ -67,7 +75,6 @@ a {
 .r-sidebarra {@extend .b-sidebarra; background:lighten($red,10%); }
 .g-sidebarra {@extend .b-sidebarra; background:lighten($gr,10%); }
 .bl-sidebarra {@extend .b-sidebarra; background:$bl; }
-
 
 //==================== navbar =========================
 header {
@@ -476,7 +483,10 @@ blockquote {
 		h3 {padding-bottom: 5px; margin-bottom: 10px; }
 		.cfield {border: 1px solid #ccc; font-size: 18px; min-height: 34px;}
 		.privacy {
-			input, label {display: inline-block; vertical-align: top; line-height: normal; }
+			color: lighten($gr, 20%);
+			font-style: italic;
+			text-align: center;
+			@extend .mt;
 		}
 	}
 	.contactinfo {

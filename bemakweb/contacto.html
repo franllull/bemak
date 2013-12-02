@@ -33,33 +33,24 @@
 			  </div>
 			  <div class="controls controls-row">
 			      <input id="email" name="email" type="email" class="span3 cfield" placeholder="tuemail@email.com">
-			      <input id="telefono" name="phone" type="text" class="span3 cfield" placeholder="+34 689 984 345">
+			      <input id="telefono" name="phone" type="tel" class="span3 cfield" placeholder="+34 689 984 345">
 			  </div>
 
 			  <div class="controls">
 			      <textarea id="mensaje" name="message" class="span6 cfield" placeholder="Mensaje" rows="5"></textarea>
 			  </div>
-			  <div class="controls privacy">
-			  	  <input type="checkbox" name="acceptprivacy" class="acceptprivacy" id="acceptprivacy" />
-			  	  <label for="acceptprivacy"> &nbsp;He leído y acepto la <a target="_blank" href="#">Política de Privacidad</a></label>
-			  </div>
 			  <div class="controls">
 			      <button id="contact-submit" type="submit" class="b-blue full-button">ENVIAR</button>
 			  </div>
+			  <div class="privacy">
+			  	  Al enviar tu información, estás aceptando nuestra <br />
+			  	  <a target="_blank" href="<!-- @path legal.html -->">Política de Privacidad</a>
+			  </div>
+
 			</form>
 		</div>
 
 	</div>
-
 </div>
-
-<script type="text/javascript">
-
-	$(".acceptprivacy").click {
-		$("#acceptprivacy").addClass("checked")
-	}
-
-</script>
-
 
 <!-- @include _footer -->
