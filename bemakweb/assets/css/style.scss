@@ -76,6 +76,17 @@ a {
 .g-sidebarra {@extend .b-sidebarra; background:lighten($gr,10%); }
 .bl-sidebarra {@extend .b-sidebarra; background:$bl; }
 
+//svg compatibility
+.no-svg {
+	header {
+		.logo {background-image: url(logo.png);}
+		.socialarrow {background-image: url(more.png);}
+	}
+}
+
+
+
+
 //==================== navbar =========================
 header {
 	background:$bl;
@@ -97,7 +108,7 @@ header {
 
 				.logo {
 					@include icon (100px, 38px);
-					background-image: url(logo.png);
+					background-image: url(mainlogo.svg);
 					background-repeat: no-repeat;
 					background-position: center center;
 					padding: 16px $pxxl;
@@ -105,13 +116,16 @@ header {
 			}
 
 			.arrow {
-				@include icon (37px, 20px);
-				background-image: url(list.png);
-				background-repeat: no-repeat;
-				background-position: center center;
+				@include icon (27px, 24px);
 				position: absolute;
 				top: 25px;
 				right: 20px;
+				.bars {
+					height: 5px;
+					margin-bottom: 3px;
+					width: 100%;
+					background: white;
+				}
 			}
 			.navcontent {padding: 0px!important; margin: 0!important;}
 			.navcontent li {
@@ -133,7 +147,7 @@ header {
 
 	.socialarrow {
 		@include icon (37px, 20px);
-		background-image: url(more.png);
+		background-image: url(more.svg);
 		background-repeat: no-repeat;
 		background-position: center center;
 		position: absolute;
