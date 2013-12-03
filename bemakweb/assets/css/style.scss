@@ -76,16 +76,6 @@ a {
 .g-sidebarra {@extend .b-sidebarra; background:lighten($gr,10%); }
 .bl-sidebarra {@extend .b-sidebarra; background:$bl; }
 
-//svg compatibility
-.no-svg {
-	header {
-		.logo {background-image: url(logo.png);}
-		.socialarrow {background-image: url(more.png);}
-	}
-}
-
-
-
 
 //==================== navbar =========================
 header {
@@ -581,4 +571,13 @@ footer {
     background-size: 72px 72px;
   }
 
+}
+
+
+//svg compatibility
+.no-svg {
+	header {
+		.logo {background-image: url(logo.png)!important;}
+		.socialarrow {background-image: url(more.png);}
+	}
 }
