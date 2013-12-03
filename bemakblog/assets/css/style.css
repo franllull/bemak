@@ -1,4 +1,4 @@
-.mt {
+.mt, .contacto .contactform .privacy {
   margin-top: 20px; }
 
 .mb {
@@ -76,7 +76,10 @@ body {
   background-image: url(../back.png);
   -webkit-font-smoothing: antialiased;
   color: #222222;
-  min-width: 305px; }
+  min-width: 305px;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box; }
 
 body.home {
   background-color: #7697ae;
@@ -84,6 +87,9 @@ body.home {
 
 .topair {
   margin-top: 60px; }
+
+.narrow {
+  max-width: 650px; }
 
 .sectiontitle {
   padding-bottom: 10px; }
@@ -138,20 +144,22 @@ header {
         display: inline-block;
         width: 100px;
         height: 38px;
-        background-image: url(../logo.png);
+        background-image: url(../mainlogo.svg);
         background-repeat: no-repeat;
         background-position: center center;
         padding: 16px 30px; }
     header nav .onnavbar .arrow {
       display: inline-block;
-      width: 37px;
-      height: 20px;
-      background-image: url(../list.png);
-      background-repeat: no-repeat;
-      background-position: center center;
+      width: 27px;
+      height: 24px;
       position: absolute;
       top: 25px;
       right: 20px; }
+      header nav .onnavbar .arrow .bars {
+        height: 5px;
+        margin-bottom: 3px;
+        width: 100%;
+        background: white; }
     header nav .onnavbar .navcontent {
       padding: 0px !important;
       margin: 0 !important; }
@@ -179,7 +187,7 @@ header {
     display: inline-block;
     width: 37px;
     height: 20px;
-    background-image: url(../more.png);
+    background-image: url(../more.svg);
     background-repeat: no-repeat;
     background-position: center center;
     position: absolute;
@@ -298,22 +306,6 @@ span.tw:hover, span.fb:hover, span.ln:hover, span.gp:hover, span.ma:hover, span.
   100% {
     -moz-transform: rotate(0deg); } }
 
-@-o-keyframes shake {
-  25%,50%,75%,100% {
-    -o-transform-origin: top top; }
-
-  25% {
-    -o-transform: rotate(10deg); }
-
-  50% {
-    -o-transform: rotate(-6deg); }
-
-  75% {
-    -o-transform: rotate(2deg); }
-
-  100% {
-    -o-transform: rotate(0deg); } }
-
 @keyframes shake {
   25%,50%,75%,100% {
     transform-origin: top top; }
@@ -352,7 +344,7 @@ span.tw:hover, span.fb:hover, span.ln:hover, span.gp:hover, span.ma:hover, span.
   background-size: 100%; }
   .homecolors .lowgrad {
     height: 600px;
-    background: -webkit-linear-gradient(top, rgba(255, 255, 255, 0) 0%, rgba(126, 157, 179, 0) 92%, #7798af 99%, #7697ae 100%);
+    background: linear-gradient(to bottom, rgba(255, 255, 255, 0) 0%, rgba(126, 157, 179, 0) 92%, #7798af 99%, #7697ae 100%);
     background: linear-gradient(to bottom, rgba(255, 255, 255, 0) 0%, rgba(126, 157, 179, 0) 92%, #7798af 99%, #7697ae 100%); }
 
 @-webkit-keyframes welcome {
@@ -363,13 +355,6 @@ span.tw:hover, span.fb:hover, span.ln:hover, span.gp:hover, span.ma:hover, span.
     background-position: 0 -2200px; } }
 
 @-moz-keyframes welcome {
-  0% {
-    background-position: 0 -200px; }
-
-  100% {
-    background-position: 0 -2200px; } }
-
-@-o-keyframes welcome {
   0% {
     background-position: 0 -200px; }
 
@@ -474,15 +459,6 @@ span.tw:hover, span.fb:hover, span.ln:hover, span.gp:hover, span.ma:hover, span.
     bottom: 0px; } }
 
 @-moz-keyframes comeout {
-  0% {
-    opacity: 0;
-    bottom: 10px; }
-
-  100% {
-    opacity: 1;
-    bottom: 0px; } }
-
-@-o-keyframes comeout {
   0% {
     opacity: 0;
     bottom: 10px; }
@@ -705,6 +681,10 @@ blockquote {
   background-color: #cf7a81; }
 .servicios .serviciosicon.disenyo {
   background-position: center -665px; }
+.servicios .serviciosblock.adwords {
+  background-color: #999999; }
+.servicios .serviciosicon.adwords {
+  background-position: center -665px; }
 
 #perfecto {
   background: #f4df79;
@@ -724,12 +704,18 @@ blockquote {
   border: 1px solid #ccc;
   font-size: 18px;
   min-height: 34px; }
+.contacto .contactform .privacy {
+  color: #999999;
+  font-style: italic;
+  text-align: center; }
 .contacto .contactinfo h3, .contacto .contactinfo .faq .faq-quest, .faq .contacto .contactinfo .faq-quest {
   padding-bottom: 5px;
   margin-bottom: 10px; }
 
 footer {
   margin: 100px 0 40px 0;
+  opacity: 0.5;
+  text-align: center;
   color: #222222;
   border-top: 1px solid #ccc;
   padding-top: 15px; }
@@ -806,3 +792,7 @@ footer {
   /* Don't forget your Retina CSS! */
   body {
     background-size: 72px 72px; } }
+.no-svg header .logo {
+  background-image: url(../logo.png) !important; }
+.no-svg header .socialarrow {
+  background-image: url(../more.png); }

@@ -5,7 +5,7 @@ var MY_MAPTYPE_ID = 'custom_style';
 
 function initialize() {
 
-  var bemak = new google.maps.LatLng(39.568955, 2.655215);
+  var bemak = new google.maps.LatLng(39.56897, 2.655109);
 
   var featureOpts = [
     {

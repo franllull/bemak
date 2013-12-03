@@ -31,6 +31,7 @@
 <![endif]-->
 <script src='<?php echo get_stylesheet_directory_uri() ?>/assets/js/jquery-1.8.3.min.js'></script>
 <script src='<?php echo get_stylesheet_directory_uri() ?>/assets/js/bootstrap.min.js'></script>
+<script src='<?php echo get_stylesheet_directory_uri() ?>/assets/js/modernizr-2.7.0.js'></script>
 
 <?php wp_head(); ?>
 
@@ -44,7 +45,11 @@
     <nav class="container">
 		<div class="onnavbar">
 			<h1><a class="current logo" href="http://www.bemak.es"><span class="hidden">BeMAK</span></a></h1>
-			<a class="arrow" href="#" data-toggle="collapse" data-target="#navcontent"></a>
+			<a class="arrow" href="#" data-toggle="collapse" data-target="#navcontent">
+				<div class="bars"></div>
+				<div class="bars"></div>
+				<div class="bars"></div>
+			</a>
 			<ul id="navcontent" class="navcontent unstyled collapse"> 
 				<li><a href="http://www.bemak.es/agencia.html">La Agencia</a></li>
 				<li><a href="http://www.bemak.es/servicios.html">Servicios</a></li>
