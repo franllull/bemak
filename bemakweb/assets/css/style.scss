@@ -42,6 +42,11 @@ $green: #86C084;
 
 //buttons
 .b-blue {@include button(darken($blue,15%));}
+.b-download {
+	@include icon (20px, 20px);
+	background-image: url(download.svg);
+	margin-right: 10px;
+	}
 .full-button {width: 100%; @include box-sizing(border-box);}
 
 //paddings
@@ -447,6 +452,10 @@ blockquote {
 }
 
 .servicios {
+	.dossier-button {
+		@extend .mt;
+		@include button($bl);
+	}
 	.serviciosblock {
 		padding: $pxxl;
 		@include box-sizing(border-box);
@@ -476,7 +485,7 @@ blockquote {
 	.serviciosicon.disenyo {background-position: center -665px;}
 
 	.serviciosblock.adwords {background-color: lighten($gr, 20%);}
-	.serviciosicon.adwords {background-position: center -665px;}
+	.serviciosicon.adwords {background-position: center -1250px;}
 
 }
 
@@ -553,6 +562,18 @@ footer {
 		min-height: 130%!important;
 	}
 
+	.dossier-box {
+		text-align: center;
+	}
+
+	.dossier-button {
+		float: none!important;
+		.b-download {
+			display: block;
+			margin: 0 auto;
+		}
+	}
+
 	.serviciosblock {
 		h1 {font-size: 35px; line-height: 33px;}
 	}
@@ -576,6 +597,9 @@ footer {
 
 //svg compatibility
 .no-svg {
+	.b-download {
+		background-image: url(download.png);
+	}
 	header {
 		.logo {background-image: url(logo.png)!important;}
 		.socialarrow {background-image: url(more.png);}
